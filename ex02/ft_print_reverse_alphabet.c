@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:09:41 by gigardin          #+#    #+#             */
-/*   Updated: 2023/05/29 18:14:07 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/05/30 14:05:00 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_print_reverse_alphabet(void)
 		write(1, &alphabet, 1);
 		alphabet--;
 	}	
-	write(1, &"\n", 1);
 }
