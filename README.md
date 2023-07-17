@@ -1,1 +1,1 @@
-# 42_scholl
+# 42_school
