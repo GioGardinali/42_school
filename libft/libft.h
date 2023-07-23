@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 15:58:19 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/22 15:57:47 by gigardin         ###   ########.fr       */
+/*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
+/*   Updated: 2023/07/23 18:49:48 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalnum(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
+#ifndef LIBFT_H
+# define LIBFT_H
+# define BUFFER_SIZE 1
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
+
+
+//mandatory part
+size_t	ft_strlen(const char *s);
+
+#endif

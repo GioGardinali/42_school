@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   isalpha.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 20:02:57 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/22 20:13:56 by gigardin         ###   ########.fr       */
+/*   Created: 2023/07/20 15:57:32 by gigardin          #+#    #+#             */
+/*   Updated: 2023/07/22 15:46:40 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_isalpha(int c)
 {
-	unsigned int	count;
-
-	count = 0;
-	while (s[count] != '\0')
-	{
-		count++;
-	}
-	return (count);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }
+
+/* int	main(void)
+{
+	isalpha(c);
+	isalpha(1);
+} */
