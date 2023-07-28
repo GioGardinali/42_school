@@ -6,21 +6,28 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:03:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/27 19:53:01 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:08:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*ptr;
 
-	i = 0;
-	while (i < n)
-	{
-		s[i] = (unsigned char *)c;
-		i++;
-	}
+	ptr = (unsigned char *)s;
+	while (n--)
+		ptr[n] = c;
 	return (s);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	teste[] = "testando";
+	printf("\nantes da mudança: %s", teste);
+	ft_memset(teste, 'A', 3);
+	printf("\nvamos ver a mudança: %s", teste);
+} */

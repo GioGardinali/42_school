@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/27 18:44:50 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:10:09 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ size_t	ft_strlcpy(char *dst, char *src, size_t size);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
