@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:13:31 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/28 17:05:11 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/07/28 21:47:18 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	while ((nptr[count] >= '\t' && nptr[count] <= '\r') || nptr[count] == ' ')
 		count++;
-	while (nptr[count] == '+' || nptr[count] == '-')
+	if (nptr[count] == '+' || nptr[count] == '-')
 	{
 		if (nptr[count] == '-')
 			signal *= -1;
