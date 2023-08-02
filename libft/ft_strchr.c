@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:08:10 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/02 17:22:26 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:16:01 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	main(void)
 	char		*ptr;
 
 	ptr = ft_strchr(teste, 'a');
-	printf("Será procurado dentro de large o texto que está na small: \n");
+	printf("Será procurado dentro de teste o o que passei de parametro: \n");
 	printf("%s", ptr);
 } */
