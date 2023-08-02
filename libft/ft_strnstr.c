@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:13:09 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/02 16:58:29 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:19:50 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	len_little;
 	size_t	index;
@@ -36,10 +36,10 @@ char	*strnstr(const char *big, const char *little, size_t len)
 int	main(void)
 {
 	const char	*largestring = "Foo Bar Baz";
-	const char	*smallstring = "o ";
+	const char	*smallstring = "Bar";
 	char		*ptr;
 
-	ptr = strnstr(largestring, smallstring, 5);
+	ptr = ft_strnstr(largestring, smallstring, 5);
 	printf("Será procurado dentro de large o texto que está na small: \n");
 	printf("%s", ptr);
 } */
