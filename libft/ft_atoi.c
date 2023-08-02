@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:13:31 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/28 21:47:18 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:23:16 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,14 @@ int	ft_atoi(const char *nptr)
 	return (res * signal);
 }
 
-/* #include <stdio.h>
+/* #include <string.h>
+
+#include <stdio.h>
 
 int	main (void)
 {
-	char	*s = "   --+--+1234ab567";
+	char	*s = "   -1234ab567";
 	printf("%d\n", ft_atoi(s));
-}
- */
+	printf("\nfunção original\n");
+	printf("%d\n", atoi(s));
+} */

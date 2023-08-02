@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:11:04 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/29 15:02:36 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:44:11 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
-	char	teste[] = "testando";
-	char	teste2 = ft_memchr(teste, 'a', 3);
+	char *teste2;
+	char	*teste = "testando";
 	printf("\nantes da mudança: %s", teste);
-	ft_memchr(teste, 'a', 3);
-	printf("\nvamos ver a mudança: %c", teste2);
-}
+	teste2= ft_memchr(teste, 'A', 3);
+	printf("\nvamos ver a mudança: %s", teste2);
+} */
