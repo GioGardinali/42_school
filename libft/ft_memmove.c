@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:04:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/28 20:26:27 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:46:34 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-	char	teste[] = "testand";
-	char	origem[] = "TESTANDO";
-	printf("\nantes da mudança: %s", teste);
-	ft_memmove(teste, origem, 7);
+	char	teste[] = "testando";
+	char	origem[] = "TESTA";
+	char	teste1[] = "testando";
+	char	origem1[] = "TESTA";
+	printf("\nDUPLICATA \n antes da mudança: %s", teste);
+	ft_memmove(teste, origem, 5);
 	printf("\nvamos ver a mudança: %s", teste);
-} */
+	printf("\nORIGINAL \n antes da mudança: %s", teste1);
+	memmove(teste1, origem1, 5);
+	printf("\nvamos ver a mudança: %s", teste1);
+}

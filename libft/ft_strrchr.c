@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:09:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/02 18:18:21 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:03:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,4 @@ int	main(void)
 	ptr = ft_strrchr(teste, 'a');
 	printf("Será procurado dentro de teste o o que passei de parametro: \n");
 	printf("%s", ptr);
-} */
+}  */
