@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 20:16:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:38 by gigardin         ###   ########.fr       */
+/*   Created: 2023/07/20 20:02:57 by gigardin          #+#    #+#             */
+/*   Updated: 2023/07/23 19:09:28 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+size_t	ft_strlen(const char *s)
 {
+	unsigned int	count;
 
+	count = 0;
+	while (s[count] != '\0')
+	{
+		count++;
+	}
+	return (count);
 }
-char	*ft_strtrim(const char *s1, const char *set)
+
+/* # include <stdio.h>
+int		main(void)
 {
-	size_t	len;
-
-	if (!s1 || !set)
-		return (NULL);
-	while (*s1 && ft_strchr (set, *s1))
-		s1++;
-	len = ft_strlen((char *)s1);
-	while (len && ft_strchr (set, s1[len - 1]))
-		len--;
-	return (ft_substr (s1, 0, len));
-}
+	int teste= ft_strlen("testando");
+	printf("imprime a contagem da string que queremos: ");
+	printf("%d", teste);
+	return (0);
+} */
