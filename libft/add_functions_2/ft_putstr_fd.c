@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:19:57 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:19 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/03 19:22:28 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-
-}
-
-int	ft_int_putstr_fd(char *s, int fd)
-{
 	unsigned int	index;
 
-	if (!s)
-	{
-		write(fd, "(null)", 6);
-		return (6);
-	}
 	index = 0;
-	while (s[index])
+	while (s[index] != '\0')
 	{
 		write(fd, &s[index], 1);
 		index++;
 	}
-	return (index);
 }
+
+/* #include   <stdio.h>
+int		main(void)
+{
+	char teste[]= "testando 1 2 3";
+	printf(" <-- imprime o que queremos --> ");
+	ft_putstr_fd(teste, 1);
+	return (0);
+} */
