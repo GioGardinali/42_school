@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:04:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/02 20:46:34 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:38:11 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 
 int	main(void)
@@ -44,4 +44,4 @@ int	main(void)
 	printf("\nORIGINAL \n antes da mudança: %s", teste1);
 	memmove(teste1, origem1, 5);
 	printf("\nvamos ver a mudança: %s", teste1);
-}
+} */

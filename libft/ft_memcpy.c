@@ -6,12 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:04:26 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/02 20:46:25 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:37:58 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -26,6 +25,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 }
 
 /* #include <stdio.h>
+#include "string.h"
 
 int	main(void)
 {
