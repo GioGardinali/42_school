@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:10:12 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/27 18:36:20 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 18:05:42 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	main(void)
 	return (0);
 }
  */
-// a função strncmp ela vai checar duas strings até encontrar a 
-// diferença entre elas se foram iguais, será 0, agora se tiver 
-// algo diferente, ela irá trazer a difenreça de endereço do caracter
-//  que ela encontrou de diferente, então se a diferença 
-//  de c e C, vai ser 32, e isso que tem que sair isso no terminal.
+/* a função strncmp ela vai checar duas strings até encontrar a 
+diferença entre elas se foram iguais, será 0, agora se tiver 
+algo diferente, ela irá trazer a difenreça de endereço do caracter
+ que ela encontrou de diferente, então se a diferença 
+ de c e C, vai ser 32, e isso que tem que sair isso no terminal. */
