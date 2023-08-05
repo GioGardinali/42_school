@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:06:17 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/27 16:51:57 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 19:25:57 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,7 @@ int		main(void)
 	printf("%d", teste);
 	return (0);
 } */
+
+/* A função toupper vai converter as letras minusculas em maiusculas, 
+para isso, nós decrementamos ao valor do int passado - 32 que é a 
+diferença entre as letras maiusculas das minusculas. */

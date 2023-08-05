@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:07:28 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/27 16:47:42 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 19:25:46 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_tolower(int c)
 }
 
 /* #include <stdio.h>
+#include <ctype.h>
 
 int		main(void)
 {
@@ -33,3 +34,7 @@ int		main(void)
 	printf("%d", teste);
 	return (0);
 } */
+
+/* A função tolower vai converter as letras maiusculas em minusculas, 
+para isso, nós acrescentamos ao valor do int passado + 32 que é a 
+diferença entre as letras maiusculas das minusculas. */
