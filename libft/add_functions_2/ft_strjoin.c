@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:01 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:43 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/03 21:15:08 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!str)
 		return (NULL);
 	index = 0;
-	while (s1[index])
+	while (s1[index] != '\0')
 	{
 		str[index] = s1[index];
 		index++;
 	}
-	while (*s2)
+	while (*s2 != '\0')
 	{
 		str[index] = *s2++;
 		index++;

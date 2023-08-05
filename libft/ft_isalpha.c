@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 15:57:32 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/27 18:21:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/04 21:56:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+#include <ctype.h>
+int main(void)
 {
-	isalpha(c);
-	isalpha(1);
+	char teste = 'A';
+
+	printf("%c é numérico, seu retorno é: %d\n", teste, ft_isalpha(teste));
+	printf("%c é numérico, seu retorno é: %d\n", teste, isalpha(teste));
 } */
+/* A função verifica se o int passado é um alfabetico (apenas letras)
+Se for, retorna 1, se não, retorna 0. */
