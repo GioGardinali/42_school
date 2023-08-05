@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:04:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 16:38:11 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:11:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,19 @@ int	main(void)
 	memmove(teste1, origem1, 5);
 	printf("\nvamos ver a mudança: %s", teste1);
 } */
+/*  A função ft_memmove é uma função em linguagem C que realiza a 
+cópia de n bytes de uma região de memória apontada por src para
+ outra região de memória apontada por dest. A diferença chave 
+ entre ft_memmove e ft_memcpy (ou memcpy) é que ft_memmove trata 
+ corretamente situações onde as duas regiões de memória podem se 
+ sobrepor, garantindo uma cópia correta e segura mesmo nessas 
+ condições.
+ char *p_dest; e char *p_src;: Duas variáveis ponteiro são 
+ declaradas, p_dest e p_src, que serão usadas para percorrer os 
+ bytes das regiões de memória dest e src, respectivamente. Elas são 
+ declaradas como ponteiros para char para garantir que o conteúdo 
+ seja tratado como bytes individuais, independentemente do tipo de 
+ dado original. Diferente do memcpy que usa apenas 1 ponteiro, para
+  realizar alteração
+  Veja aqui mais explicação sobre o memmove e memcpy:
+  https://github.com/GioGardinali/informacoes_valiosas/blob/main/1_funcoes_de_manipulacao_de_memoria_pt_1_memcpy_vs_memmove.md */

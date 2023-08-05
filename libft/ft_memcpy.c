@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:04:26 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 16:37:58 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:01:49 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,13 @@ int	main(void)
 	memcpy(teste2, origem2, 5);
 	printf("\nvamos ver a mudança: %s", teste2);
 } */
+
+/* Em resumo, a função ft_memcpy copia n bytes da região de memória
+apontada por src para a região de memória apontada por dest. 
+Ela lida com sobreposição de memória e evita a cópia desnecessária 
+quando src e dest apontam para a mesma região. O valor de retorno 
+da função é o ponteiro para a região de memória de destino.
+Porém, é possível realizar caca com o memcpy, ele pode cagar 
+na região de memoria que ele está alterando, prejudicando a saída dos array.
+Veja aqui: https://github.com/GioGardinali/informacoes_valiosas/blob/main/1_funcoes_de_manipulacao_de_memoria_pt_1_memcpy_vs_memmove.md
+ */
