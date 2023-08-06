@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/08/06 18:25:11 by gigardin         ###   ########.fr        #
+#    Updated: 2023/08/06 18:28:55 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ RM		= rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) -c $< -o $?
