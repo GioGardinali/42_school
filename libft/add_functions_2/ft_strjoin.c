@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:01 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 21:15:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:11:09 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[index] = '\0';
 	return (str);
 }
+
+/* int	main(void)
+{
+	char	*teste1 = "testando";
+	char	*teste2 = "testando";
+	ft_strjoin(teste1, teste2);
+}
+ */
