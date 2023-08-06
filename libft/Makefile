@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/08/06 18:28:55 by gigardin         ###   ########.fr        #
+#    Updated: 2023/08/06 19:50:51 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ $(NAME): $(OBJS)
 
 $(OBJS): $(SRC)
 	$(CC) $(CFLAGS) -c $< -o $?
+	gcc -Wall -Wextra -Werror -c $< -o $?
 
 clean:
 	$(RM) $(OBJS)
