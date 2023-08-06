@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:58 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 20:55:45 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 20:59:41 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,28 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[count] = '\0';
 	return (result);
 }
+
+/* #include <stdio.h>
+// Função que converte letras minúsculas em maiúsculas
+void	*convert_to_uppercase(unsigned int index, char *character)
+{
+	if (*character >= 'a' && *character <= 'z')
+	{
+		*character = *character - 32;
+	}
+}
+
+int main(void)
+{
+	char			str[] = "Hello, world!";
+	unsigned int	quantidade = ft_strlen(str);
+	// Chamando ft_striteri para percorrer a string e converter letras 
+	minúsculas em maiúsculas
+	ft_strmapi(str, convert_to_uppercase);
+	// Imprimindo a string após a conversão
+	printf("String após a conversão: %s\n", str);
+	return (0);
+} */
 
 /* Esta é a declaração da função ft_strmapi. Ela recebe dois argumentos:
 
