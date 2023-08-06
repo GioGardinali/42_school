@@ -6,20 +6,15 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:15:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/06 20:26:29 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:48:33 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	
-}
-
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char	*substr;
+	char	*new_substr;
 	size_t	len_s;
 	size_t	index;
 
@@ -30,17 +25,17 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > (len_s - start))
 		len = len_s - start;
-	substr = (char *)malloc(len * sizeof(char) + 1);
-	if (!substr)
+	new_substr = (char *)malloc(len * sizeof(char) + 1);
+	if (!new_substr)
 		return (NULL);
 	index = 0;
 	while (s[index] && index < len)
 	{
-		substr[index] = s[start + index];
+		new_substr[index] = s[start + index];
 		index++;
 	}
-	substr[index] = '\0';
-	return (substr);
+	new_substr[index] = '\0';
+	return (new_substr);
 }
 
 int	main(void)
@@ -51,3 +46,12 @@ int	main(void)
 	printf("saída duplicata: ");
 	printf("\n %s", resposta);
 }
+
+A função ft_substr. Ela recebe três argumentos:
+
+s: Um ponteiro constante para a string da qual será extraída a 
+substring.
+start: Um número inteiro não assinado que representa a posição 
+inicial da substring na string s.
+len: Um número do tipo size_t que representa o comprimento da 
+substring a ser extraída
