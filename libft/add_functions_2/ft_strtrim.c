@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:38 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:16:36 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (len && ft_strchr (set, s1[len - 1]))
 		len--;
 	return (ft_substr (s1, 0, len));
+}
+
+int main(void)
+{
+	char	*teste1;
+	char	*teste2;
 }

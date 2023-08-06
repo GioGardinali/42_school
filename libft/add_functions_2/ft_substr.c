@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:15:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:46 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:26:29 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,13 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	}
 	substr[index] = '\0';
 	return (substr);
+}
+
+int	main(void)
+{
+	char	*teste = "testando";
+	char	*resposta = ft_substr(teste, 0, 4);
+
+	printf("saída duplicata: ");
+	printf("\n %s", resposta);
 }
