@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:58 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 20:59:41 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:12:41 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		count;
-	char	*result;
+	char	*p_result;
 
 	if (!s)
 		return (NULL);
-	result = malloc(ft_strlen(s) * sizeof(char) + 1);
-	if (!result)
+	p_result = malloc(ft_strlen(s) * sizeof(char) + 1);
+	if (!p_result)
 		return (NULL);
 	count = 0;
 	while (s[count] != '\0')
 	{
-		result[count] = f(count, s[count]);
+		p_result[count] = f(count, s[count]);
 		count++;
 	}
-	result[count] = '\0';
-	return (result);
+	p_result[count] = '\0';
+	return (p_result);
 }
 
 /* #include <stdio.h>
