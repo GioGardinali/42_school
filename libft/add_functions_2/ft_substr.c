@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:15:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/06 21:25:24 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:33:27 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ start: Um número inteiro não assinado que representa a posição
 inicial da substring na string s.
 len: Um número do tipo size_t que representa o comprimento da
 substring a ser extraída
+
 
 if (start >= len_s) return (ft_strdup("")) : A função verifica se
 a posição inicial start é maior ou igual ao tamanho da string
