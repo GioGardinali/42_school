@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:04:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 14:11:39 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/07 22:20:09 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (p_dest > p_src)
 	{
 		while (n--)
-			*p_dest++ = *p_src++;
+			p_dest[n] = p_src[n];
 		return (dest);
 	}
 	ft_memcpy(p_dest, p_src, n);
