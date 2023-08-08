@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/08/07 22:19:42 by gigardin         ###   ########.fr        #
+#    Updated: 2023/08/08 19:47:16 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,19 @@ SRC		= ft_atoi.c \
 
 OBJS	= $(SRC:%.c=%.o)
 
+OBJS_BONUS	= $(SRC_BONUS:%.c=%.o)
+
 RM		= rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	ar rcs $(NAME) $?
+	echo $?
+
+bonus: $(NAME)
+
+$(NAME): $(OBJS_BONUS)
 	ar rcs $(NAME) $?
 	echo $?
 

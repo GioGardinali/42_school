@@ -6,17 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/06 20:16:36 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/08 19:30:51 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
-{
-
-}
-char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	len;
 
