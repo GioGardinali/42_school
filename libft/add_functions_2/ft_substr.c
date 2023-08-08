@@ -6,17 +6,17 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:15:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/06 21:33:27 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/08 17:33:51 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *new_substr;
-	size_t len_s;
-	size_t index;
+	char	*new_substr;
+	size_t	len_s;
+	size_t	index;
 
 	if (!s)
 		return (NULL);
