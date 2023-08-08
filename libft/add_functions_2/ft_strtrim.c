@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/08 19:30:51 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/08 20:43:21 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr (s1, 0, len));
 }
 
-int main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
-	char	*teste1;
-	char	*teste2;
-}
+	char	*teste1 = "testando";
+	char	*teste2 = "ndo";
+
+	printf("saída nova de teste1: \n");
+	printf("%s", ft_strtrim(teste1, teste2));
+} */
