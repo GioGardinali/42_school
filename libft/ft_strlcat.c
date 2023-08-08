@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:05:53 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 18:05:57 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/07 22:22:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	dest_length;
-	size_t	src_length;
+	size_t	dest_len;
+	size_t	src_index;
 
-	i = 0;
-	dest_length = ft_strlen(dst);
-	src_length = ft_strlen(src);
-	if (size > dest_length)
+	dest_len = ft_strlen(dst);
+	src_index = 0;
+	while ((dest_len + src_index + 1) < size && src[src_index])
 	{
-		return (src_length + dest_length);
+		dst[dest_len + src_index] = src[src_index];
+		src_index++;
 	}
-	while (src[i] != '\0' && (dest_length + 1) < size)
+	dst[dest_len + src_index] = '\0';
+	while (src[src_index])
+		src_index++;
+	if (dest_len >= size)
 	{
-		dst[dest_length] = src[i];
-		dest_length++;
-		i++;
+		return (src_index + size);
 	}
-	dst[dest_length] = '\0';
-	return (src_length + size);
+	return (dest_len + size);
 }
 
 /* #include <stdio.h>

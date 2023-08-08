@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:05:05 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 17:55:28 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/07 22:21:48 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, char *src, size_t size)
 	size_t	index;
 
 	index = 0;
-	while (src[index] != '\0' && index + 1 < size)
+	while (src[index] && index + 1 < size)
 	{
 		dst[index] = src[index];
 		index++;
