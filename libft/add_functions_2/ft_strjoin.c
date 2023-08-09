@@ -6,16 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:01 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/06 20:11:09 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/09 17:05:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
