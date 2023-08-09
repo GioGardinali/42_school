@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:01 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/09 17:05:32 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:36:08 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strjoin(teste1, teste2);
 }
  */
+
+/* Esta função ft_strjoin em C concatena duas strings s1 e s2 
+para formar uma nova string resultante. Ela aloca memória 
+suficiente para a nova string que conterá a concatenação 
+das duas strings de entrada e, em seguida, copia os 
+caracteres das strings s1 e s2 para a nova string. O 
+resultado é uma nova string que contém a combinação das 
+duas strings originais. Certifique-se de liberar a memória 
+alocada para a nova string quando ela não for mais 
+necessária para evitar vazamentos de memória.
+
+Esta função é útil para combinar duas strings em uma única string, 
+permitindo a construção de strings mais complexas a partir de 
+partes individuais. Certifique-se de entender o funcionamento da 
+alocação de memória, cópia de caracteres e o uso do caractere nulo 
+de término para obter uma compreensão completa da função. */
