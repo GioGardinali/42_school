@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:14:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 16:32:52 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/09 22:54:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	p_nmemb = malloc(nmemb * size);
 	if (!p_nmemb)
 		return (NULL);
-	ft_bzero(p_nmemb, nmemb * size);
+	ft_bzero(p_nmemb, overflow);
 	return (p_nmemb);
 }
 
