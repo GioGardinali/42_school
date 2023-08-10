@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:16:01 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/09 18:36:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:35:42 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	char	*teste1 = "testando";
-	char	*teste2 = "testando";
-	ft_strjoin(teste1, teste2);
-}
- */
+	char	*teste2 = "...testando";
+	char	*resposta = ft_strjoin(teste1, teste2);
+
+	printf("Imprimindo a função ft_strjoin: \n");
+	printf("%s\n", resposta);
+} */
 
 /* Esta função ft_strjoin em C concatena duas strings s1 e s2 
 para formar uma nova string resultante. Ela aloca memória 
