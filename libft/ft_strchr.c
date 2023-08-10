@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:08:10 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 15:10:15 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/09 22:49:00 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strchr(const char *s, int c)
 	if (!s)
 		return (NULL);
 	while (*s)
-		if (*s++ == (char)c)
+		if (*s++ == (unsigned char)c)
 			return ((char *)(s - 1));
-	if (*s == (char)c)
+	if (*s == (unsigned char)c)
 		return ((char *)s);
 	return (NULL);
 }
