@@ -6,16 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/03 17:34:34 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/09 22:56:58 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	**ft_split(char const *s, char c)
-{
-	
-}
 
 static int	ft_count_slices(char const *s, char c)
 {
