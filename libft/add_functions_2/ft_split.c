@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/12 03:42:57 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 07:39:18 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,3 +94,18 @@ int	main(void)
 dividir uma string em "slices" (pedaços) com base em um 
 caractere delimitador e retornar um array de strings 
 contendo esses "slices". */
+
+/* A função split usamos um array (**), sabendo disso
+chamamos na função a string principal + o caractere que estamos procurando
+( - , . < > " " ' ' e por aí vai de caracteres que realizam
+a separação de strings )
+
+Assim, eu faço uma função chamada count slices para contar 
+quantas vezes este caractere C aparece dentro da String, já
+que ele será o limitador de cada nova string que irei criar.
+Onde eu coloco o index para seguir para o pŕoximo caractere
+cso ele seja o C (que já foi contabilizado), depois
+mando um while rodar até ser diferente de C ou \0, para encontrar
+o proximo C e um if que fica responsável de que após ele encontrar
+um caractere C, ele vai na condicional e acrescenta + 1 slice 
+se a string ainda não chegou no \0. */
