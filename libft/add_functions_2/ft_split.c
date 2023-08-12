@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/12 00:38:34 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 00:49:11 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**ft_split(char const *s, char c)
 	return (splited);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -89,7 +89,7 @@ int	main(void)
 		free(splited); // Liberar memória alocada para o array de ponteiros
 	return (0);
 }
-
+ */
 /* O principal objetivo da função ft_split que você enviou é 
 dividir uma string em "slices" (pedaços) com base em um 
 caractere delimitador e retornar um array de strings 

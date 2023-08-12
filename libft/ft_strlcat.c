@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:05:53 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/08 19:01:46 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 00:42:53 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (dest_len + src_len);
 }
 
-//incorreta conforme tester
+/* //incorreta conforme tester
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dest_len;
@@ -56,7 +56,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (src_index + size);
 	}
 	return (dest_len + size);
-}
+} */
 
 /* #include <stdio.h>
 #include <string.h>
