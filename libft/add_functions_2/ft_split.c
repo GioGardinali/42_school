@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/12 07:39:18 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 07:45:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,3 +109,10 @@ mando um while rodar até ser diferente de C ou \0, para encontrar
 o proximo C e um if que fica responsável de que após ele encontrar
 um caractere C, ele vai na condicional e acrescenta + 1 slice 
 se a string ainda não chegou no \0. */
+/* Por ultimo, passamos a função ft_slices(splited, s, c, count_slices)
+que vai pegar como parametro o array criado + a string original
++ o caractere que estamos procurando + a contagem dos pedaços
+que a string será fragmentada.
+Nesta função trabalhamos o position como cada casinha dentro
+do array e o index, para contabilizar a quantidade de caracteres
+entra cada delimitador "char c". */
