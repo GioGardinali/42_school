@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/12 07:45:32 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 07:54:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,3 +116,10 @@ que a string será fragmentada.
 Nesta função trabalhamos o position como cada casinha dentro
 do array e o index, para contabilizar a quantidade de caracteres
 entra cada delimitador "char c". */
+/* Eu seto o index em 0, coloco um while para rodar até encontrar
+um caractere C e encontrar o \0, 
+No momento que ele encontra, partimos para a condicional if
+para checar se é == c ou diferente de \0, pois iremos aplicar
+o substr (para criar nova string com a quantidade de index
+que rodamos) */
+
