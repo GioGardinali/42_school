@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/12 00:28:32 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 00:38:34 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,13 @@ int	main(void)
 
 	char	**splited = ft_split(string, delimiter);
 
-	if (splited)
-	{
+
 		for (int i = 0; splited[i] != NULL; i++)
 		{
 			printf("Slice %d: %s\n", i, splited[i]);
 			free(splited[i]); // Liberar memória alocada para cada slice
 		}
 		free(splited); // Liberar memória alocada para o array de ponteiros
-	}
-	else
-	{
-		printf("Failed to split the string.\n");
-	}
 	return (0);
 }
 
