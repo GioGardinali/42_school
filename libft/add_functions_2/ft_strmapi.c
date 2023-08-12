@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:58 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 21:12:41 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 00:35:34 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,26 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (p_result);
 }
 
-/* #include <stdio.h>
-// Função que converte letras minúsculas em maiúsculas
-void	*convert_to_uppercase(unsigned int index, char *character)
+/* char to_upper(unsigned int index, char c)
 {
-	if (*character >= 'a' && *character <= 'z')
-	{
-		*character = *character - 32;
-	}
+    if (c >= 'a' && c <= 'z')
+        return c - ('a' - 'A');
+    return c;
 }
+
+#include <stdio.h>
 
 int main(void)
 {
-	char			str[] = "Hello, world!";
-	unsigned int	quantidade = ft_strlen(str);
-	// Chamando ft_striteri para percorrer a string e converter letras 
-	minúsculas em maiúsculas
-	ft_strmapi(str, convert_to_uppercase);
-	// Imprimindo a string após a conversão
-	printf("String após a conversão: %s\n", str);
-	return (0);
+    const char *text = "hello, world!";
+    char *result;
+
+    result = ft_strmapi(text, to_upper);
+
+
+        printf("Original: %s\nModified: %s\n", text, result);
+        free(result); // Liberar a memória alocada
+    return 0;
 } */
 
 /* Esta é a declaração da função ft_strmapi. Ela recebe dois argumentos:

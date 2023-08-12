@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/09 22:56:58 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/12 00:28:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_count_slices(char const *s, char c)
 
 	slices = 0;
 	index = 0;
-	while (s[index])
+	while (s[index] != '\0')
 	{
 		while (s[index] == c)
 			index++;
@@ -31,23 +31,21 @@ static int	ft_count_slices(char const *s, char c)
 	return (slices);
 }
 
-static void	ft_slices(char **splited, char const *s, char c)
+static void	ft_slices(char **splited, char const *s, char c, size_t len)
 {
 	size_t	index;
 	size_t	position;
-	size_t	len;
 
 	position = 0;
 	index = 0;
-	len = ft_count_slices(s, c);
 	while (len)
 	{
 		while (*s == c)
 			s++;
 		index = 0;
-		while (s[index] != c && s[index])
+		while (s[index] != c && s[index] != '\0')
 			index++;
-		if (s[index] == c || *s)
+		if (s[index] == c || *s != '\0')
 		{
 			splited[position] = ft_substr(s, 0, index);
 			position++;
@@ -61,12 +59,44 @@ static void	ft_slices(char **splited, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**splited;
+	size_t	count_slices;
 
 	if (!s)
 		return (NULL);
-	splited = malloc((ft_count_slices(s, c) + 1) * sizeof(char *));
+	count_slices = ft_count_slices(s, c);
+	splited = malloc((count_slices + 1) * sizeof(char *));
 	if (!splited)
 		return (NULL);
-	ft_slices(splited, s, c);
+	ft_slices(splited, s, c, count_slices);
 	return (splited);
 }
+
+#include <stdio.h>
+
+int	main(void)
+{
+	const char	*string = "Hello,World,This,is,a,test";
+	char		delimiter = ',';
+
+	char	**splited = ft_split(string, delimiter);
+
+	if (splited)
+	{
+		for (int i = 0; splited[i] != NULL; i++)
+		{
+			printf("Slice %d: %s\n", i, splited[i]);
+			free(splited[i]); // Liberar memória alocada para cada slice
+		}
+		free(splited); // Liberar memória alocada para o array de ponteiros
+	}
+	else
+	{
+		printf("Failed to split the string.\n");
+	}
+	return (0);
+}
+
+/* O principal objetivo da função ft_split que você enviou é 
+dividir uma string em "slices" (pedaços) com base em um 
+caractere delimitador e retornar um array de strings 
+contendo esses "slices". */
