@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:08 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/12 07:54:54 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/13 13:49:49 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ int	main(void)
 /* O principal objetivo da função ft_split que você enviou é 
 dividir uma string em "slices" (pedaços) com base em um 
 caractere delimitador e retornar um array de strings 
-contendo esses "slices". */
+contendo esses "slices".
 
-/* A função split usamos um array (**), sabendo disso
+A função split usamos um array (**), sabendo disso
 chamamos na função a string principal + o caractere que estamos procurando
 ( - , . < > " " ' ' e por aí vai de caracteres que realizam
 a separação de strings )
@@ -108,18 +108,34 @@ cso ele seja o C (que já foi contabilizado), depois
 mando um while rodar até ser diferente de C ou \0, para encontrar
 o proximo C e um if que fica responsável de que após ele encontrar
 um caractere C, ele vai na condicional e acrescenta + 1 slice 
-se a string ainda não chegou no \0. */
-/* Por ultimo, passamos a função ft_slices(splited, s, c, count_slices)
+se a string ainda não chegou no \0.
+
+Por ultimo, passamos a função ft_slices(splited, s, c, count_slices)
 que vai pegar como parametro o array criado + a string original
 + o caractere que estamos procurando + a contagem dos pedaços
 que a string será fragmentada.
+
 Nesta função trabalhamos o position como cada casinha dentro
 do array e o index, para contabilizar a quantidade de caracteres
-entra cada delimitador "char c". */
-/* Eu seto o index em 0, coloco um while para rodar até encontrar
+entra cada delimitador "char c".
+
+Eu seto o index em 0, coloco um while para rodar até encontrar
 um caractere C e encontrar o \0, 
 No momento que ele encontra, partimos para a condicional if
 para checar se é == c ou diferente de \0, pois iremos aplicar
 o substr (para criar nova string com a quantidade de index
-que rodamos) */
+que rodamos)
+Após aplicar o substr, vamos decrementar o 'len' (quant de pedaços)
+e vamos setar a string principal s direto para o index que 
+estávamos (se meu index era 5, a partir da pŕoxima volta do
+while, vai ser o ínicio da minha string)
+É um pouco confuso, mas assim, vamos supor que meu s terminou 
+assim: s[index] --> s[5], assim eu aponto a nova posição para 
+o s iniciar o pŕoximo pedaço, ou seja s = &s[index](novo valor);
+assim, agora meu s está iniciando pelo s[5] e não s[0] e eu 
+sigo o loop até terminar todos os lens.
 
+Ahh lembrando, toda vez que ele entra no loop, ele seta o index 
+para 0, mas é porque ele é o nosso count de tamanho da próxima 
+string que será criada devido já ser outro pedaço da string 
+principal. */
