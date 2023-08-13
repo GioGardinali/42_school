@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:14:41 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 16:08:00 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:22:40 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strdup(const char *s)
 	}
 	len = ft_strlen (s);
 	copy = malloc (sizeof (char) * len + 1);
+	if (!copy)
+		return (NULL);
 	index = 0;
 	while (s[index])
 	{

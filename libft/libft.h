@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/09 21:04:46 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:20:27 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 3
 
 # include <unistd.h>
 # include <stdlib.h>
