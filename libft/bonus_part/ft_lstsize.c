@@ -6,7 +6,12 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:23:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/20 20:23:43 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:50:49 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+int		ft_lstsize(t_list *lst)
+{
+	
+}

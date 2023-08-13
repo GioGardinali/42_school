@@ -6,7 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:24:11 by gigardin          #+#    #+#             */
-/*   Updated: 2023/07/20 20:24:12 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:51:21 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
+{
+
+}
