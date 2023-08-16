@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:22:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/15 17:50:33 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/16 14:46:25 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ t_list	*ft_lstnew(void *content)
 	return (new_node);
 }
 
+#include <stdio.h>
+int	main(void)
+{
+	t_list	str;
+
+	str.content = "teste";
+	ft_lstnew(&str);
+	printf("%s \n", str.content);
+	printf("%s \n", str.next);
+	printf("%s \n", ft_lstnew(&str));
+}
 /* Lista deve consistir em 3 nós (node)
 Tem que ter um ponteiro que aponta para o 1º nó da lista
 
