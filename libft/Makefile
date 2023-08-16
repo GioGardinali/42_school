@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/08/15 17:55:59 by gigardin         ###   ########.fr        #
+#    Updated: 2023/08/16 16:04:40 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,9 +71,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $?
 	echo $?
 
-bonus: $(NAME)
-
-$(NAME): $(OBJS_BONUS)
+bonus: $(OBJS): $(OBJS_BONUS)
 	ar rcs $(NAME) $?
 	echo $?
 
