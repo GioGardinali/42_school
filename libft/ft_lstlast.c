@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:24:11 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/16 16:29:35 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:34:56 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,7 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-/* Tem que retornar o ultimo nó da lista */
+/* Tem que retornar o ultimo nó da lista
+que que usar um loop, igual o lstsize e eu retorno o lst que está
+com o último valor.
+*/
