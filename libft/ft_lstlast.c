@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:24:11 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/16 15:45:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:29:35 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *last_node;
-	last_node = malloc(sizeof(t_list));
-	
-	while(lst)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 	{
-		last_node = lst->next;
+		lst = lst->next;
 	}
-	return (last_node);
+	return (lst);
 }
 
-
-Tem que retornar o ultimo nó da lista
+/* Tem que retornar o ultimo nó da lista */

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:23:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/15 20:54:40 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:31:59 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = lst;
+	new->next = *lst;
 	*lst = new;
 }
 

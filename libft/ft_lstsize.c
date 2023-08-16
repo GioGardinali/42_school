@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:23:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/16 15:35:38 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:28:41 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_lstsize(t_list *lst)
 	int	size;
 
 	size = 0;
-	if (!lst)
-		return (NULL);
 	while (lst)
 	{
 		size++;
