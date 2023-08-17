@@ -6,15 +6,17 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/08/16 16:39:27 by gigardin         ###   ########.fr        #
+#    Updated: 2023/08/16 22:56:44 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror
+CC		:= cc
 
-NAME	= libft.a
+CFLAGS	:= -Wall -Wextra -Werror
 
-SRC		= ft_atoi.c \
+NAME	:= libft.a
+
+SRC		:= ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -49,7 +51,7 @@ SRC		= ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
-SRC_BONUS	=	ft_lstnew.c \
+SRC_BONUS	:=	ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
 				ft_lstlast.c \
@@ -59,11 +61,11 @@ SRC_BONUS	=	ft_lstnew.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
 
-OBJS	= $(SRC:%.c=%.o)
+OBJS		:= $(SRC:%.c=%.o)
 
-OBJS_BONUS	= $(SRC_BONUS:%.c=%.o)
+OBJS_BONUS	:= $(SRC_BONUS:%.c=%.o)
 
-RM		= rm -rf
+RM			:= rm -rf
 
 all: $(NAME)
 
@@ -71,16 +73,18 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $?
 	echo $?
 
-bonus: $(OBJS): $(OBJS_BONUS)
-	ar rcs $(NAME) $?
-	echo $?
+bonus: $(OBJS) $(OBJS_BONUS)
+
+%.o: %.c
+	$(CC) -c $< -o $@
+	ar rcs $(NAME) $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
