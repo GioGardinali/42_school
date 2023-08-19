@@ -6,17 +6,15 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/13 16:46:16 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/18 22:35:24 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFFER_SIZE 3
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdarg.h>
 
 typedef struct s_list
 {
