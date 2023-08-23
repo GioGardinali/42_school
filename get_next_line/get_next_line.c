@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/22 15:41:39 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/23 16:58:04 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,15 @@ qualquer dado, ele deve retornar -1 com errno definido como
 
 Se um read () for interrompido por um sinal após ter lido 
 algum dado com sucesso, ele retornará o número de bytes lidos. */
+
+/* 
+Pra fazer a GNL a gente vai precisar separar o programa em:
+
+*Uma função para ler o fd e amarzenar o valor até o \n ou 
+*fim do arquivo.
+
+*Uma função para salvar a quantidade da string e retornar
+na tela.
+
+Lembrando que o read tem determinadas situações para -1 na
+leitura */
