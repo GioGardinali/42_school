@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/19 16:51:22 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 20:26:03 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,20 @@ char	*ft_strdup(const char *s)
 	}
 	copy[index] = '\0';
 	return (copy);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	index;
+
+	index = 0;
+	while (s[index])
+	{
+		if (s[index] == (unsigned char)c)
+			return ((char *)s + index);
+		index++;
+	}
+	if (s[index] == (unsigned char)c)
+		return ((char *)s + index);
+	return (NULL);
 }

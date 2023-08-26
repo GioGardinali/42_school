@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/26 17:44:43 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 20:28:24 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,41 @@ static char	count_line_break(int fd, char *buffer, char *residue)
 	while (char_read)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
-		if (bytes > 0)
-			return ("free no residue e retornar NULL");
+		if (bytes < 0)
+			return (free_nbr_null(residue, NULL, NULL));
 		if (bytes == 0)
+			break ;
+		buffer[bytes] = '\0';
+		if (!residue)
+			residue = ft_strdup("");
+		residue = ft_strjoin(residue, buffer);
+		if (ft_strchr(residue, '\n'))
 			break ;
 	}
 	return (residue);
+}
+
+static void	*free_nbr_null(char **s1, char **s2, char **s3)
+{
+	if (s1)
+	{
+		if (*s1)
+			free(*s1);
+		*s1 = NULL;
+	}
+	if (s2)
+	{
+		if (*s2)
+			free(*s2);
+		*s2 = NULL;
+	}
+	if (s3)
+	{
+		if (*s3)
+			free(*s3);
+		*s3 = NULL;
+	}
+	return (NULL);
 }
 
 char	*get_next_line(int fd)
@@ -43,6 +72,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = count_line_break(fd, buffer, residue);
 }
+
 
 /* A função read () lê dados previamente gravados em um arquivo. 
 Se qualquer parte de um arquivo regular anterior ao fim do 
