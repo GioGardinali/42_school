@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/26 15:11:10 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 17:46:37 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,6 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
-/* 
-Declarando uma lista encadeada para usar na GNL
-Ela vai armazenar caractere por caractere e apontar
-para o pronimo nó da lista pelo *next.
- */
-
-typedef struct s_char
-{
-	char			*one_char;
-	struct s_char	*next;
-}	t_char;
 
 //mandatory part 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

@@ -6,15 +6,28 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/26 16:29:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 17:44:43 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	read_line(int fd, char *buffer, char *residue)
+static char	count_line_break(int fd, char *buffer, char *residue)
 {
+	int		bytes;
+	char	char_read;
 
+	bytes = 0;
+	char_read = BUFFER_SIZE;
+	while (char_read)
+	{
+		bytes = read(fd, buffer, BUFFER_SIZE);
+		if (bytes > 0)
+			return ("free no residue e retornar NULL");
+		if (bytes == 0)
+			break ;
+	}
+	return (residue);
 }
 
 char	*get_next_line(int fd)
@@ -28,7 +41,7 @@ char	*get_next_line(int fd)
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	line = read_line(fd, buffer, residue);
+	line = count_line_break(fd, buffer, residue);
 }
 
 /* A função read () lê dados previamente gravados em um arquivo. 
