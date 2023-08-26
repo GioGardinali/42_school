@@ -6,10 +6,17 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/23 16:58:04 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:53:44 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
+
+char	*get_next_line(int fd)
+{
+	char		*str;
+	static char	buffer[BUFFER_SIZE + 1];
+}
 
 /* A função read () lê dados previamente gravados em um arquivo. 
 Se qualquer parte de um arquivo regular anterior ao fim do 

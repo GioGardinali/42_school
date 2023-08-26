@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/23 18:38:33 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 15:11:10 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 /* 
 Declarando uma lista encadeada para usar na GNL
 Ela vai armazenar caractere por caractere e apontar
