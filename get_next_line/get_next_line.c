@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/27 00:46:51 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/27 03:40:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,18 @@ static void	*free_nbr_null(char **s1, char **s2, char **s3)
 		*s3 = NULL;
 	}
 	return (NULL);
+}
+
+static char	ft_split_line(char *line)
+{
+	char	*rest_memory;
+	int		index;
+
+	index = 0;
+	while (line[index] != '\n' && line[index] != '\0')
+		index++;
+	while (line[index] != '\0' || line[index + 1] != '\0')
+		return (NULL);
 }
 
 char	*get_next_line(int fd)
