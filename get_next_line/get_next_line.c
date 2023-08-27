@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/27 03:40:39 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/27 14:27:41 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ static char	count_line_break(int fd, char *buffer, char *residue)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
-			return (free_nbr_null(residue, NULL, NULL));
+		{
+			free(residue);
+			return (NULL);
+		}
 		if (bytes == 0)
 			break ;
 		buffer[bytes] = '\0';
@@ -36,29 +39,6 @@ static char	count_line_break(int fd, char *buffer, char *residue)
 	return (residue);
 }
 
-static void	*free_nbr_null(char **s1, char **s2, char **s3)
-{
-	if (s1)
-	{
-		if (*s1)
-			free(*s1);
-		*s1 = NULL;
-	}
-	if (s2)
-	{
-		if (*s2)
-			free(*s2);
-		*s2 = NULL;
-	}
-	if (s3)
-	{
-		if (*s3)
-			free(*s3);
-		*s3 = NULL;
-	}
-	return (NULL);
-}
-
 static char	ft_split_line(char *line)
 {
 	char	*rest_memory;
@@ -69,6 +49,8 @@ static char	ft_split_line(char *line)
 		index++;
 	while (line[index] != '\0' || line[index + 1] != '\0')
 		return (NULL);
+	rest_memory = ft_substr(line, 0, index);
+	return (rest_memory);
 }
 
 char	*get_next_line(int fd)
