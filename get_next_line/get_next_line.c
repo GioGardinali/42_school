@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/26 23:57:14 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/27 00:46:51 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ char	*get_next_line(int fd)
 	free(buffer);
 	if (line == NULL)
 		return (line);
+	residue = ft_split_line(line);
+	return (line);
 }
 
 
@@ -106,3 +108,7 @@ na tela.
 
 Lembrando que o read tem determinadas situações para -1 na
 leitura */
+
+/* 1024 é o limite de arquivos que o sistema operacional usando
+open, consegue abrir simutaneamente até este limite de arquivo
+que denominamos como File Descriptor (fd) */
