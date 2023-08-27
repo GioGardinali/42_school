@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/26 20:28:24 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/26 23:57:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	line = count_line_break(fd, buffer, residue);
+	free(buffer);
+	if (line == NULL)
+		return (line);
 }
 
 
