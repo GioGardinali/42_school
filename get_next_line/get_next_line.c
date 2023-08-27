@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/27 14:42:23 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/27 14:52:34 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char	count_line_break(int fd, char *buffer, char *residue)
 		if (ft_strchr(residue, '\n'))
 			break ;
 	}
-	return (*residue);
+	return (residue);
 }
 
 static char	ft_split_line(char *line)
@@ -65,7 +65,7 @@ char	*get_next_line(int fd)
 	char		*buffer;
 	static char	*residue;
 
-	if (fd > 0 || BUFFER_SIZE <= 0 || read (fd, NULL, NULL))
+	if (fd > 0 || BUFFER_SIZE <= 0 || read (fd, NULL, 0))
 		return (NULL);
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
