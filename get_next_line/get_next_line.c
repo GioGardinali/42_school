@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/27 14:27:41 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/27 14:42:23 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char	count_line_break(int fd, char *buffer, char *residue)
 		if (ft_strchr(residue, '\n'))
 			break ;
 	}
-	return (residue);
+	return (*residue);
 }
 
 static char	ft_split_line(char *line)
@@ -49,7 +49,13 @@ static char	ft_split_line(char *line)
 		index++;
 	while (line[index] != '\0' || line[index + 1] != '\0')
 		return (NULL);
-	rest_memory = ft_substr(line, 0, index);
+	rest_memory = ft_substr(line, index + 1, ft_strlen(line) - index);
+	if (*rest_memory == '\0')
+	{
+		free(rest_memory);
+		rest_memory = NULL;
+	}
+	line[index + 1] = '\0';
 	return (rest_memory);
 }
 
