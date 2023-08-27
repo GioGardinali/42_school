@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/26 20:26:03 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/27 03:43:11 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,30 @@ char	*ft_strchr(const char *s, int c)
 	if (s[index] == (unsigned char)c)
 		return ((char *)s + index);
 	return (NULL);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*new_substr;
+	size_t	len_s;
+	size_t	index;
+
+	if (!s)
+		return (NULL);
+	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_strdup(""));
+	if (len > (len_s - start))
+		len = len_s - start;
+	new_substr = (char *)malloc(len * sizeof(char) + 1);
+	if (!new_substr)
+		return (NULL);
+	index = 0;
+	while (s[index] != '\0' && index < len)
+	{
+		new_substr[index] = s[start + index];
+		index++;
+	}
+	new_substr[index] = '\0';
+	return (new_substr);
 }
