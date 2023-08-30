@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/30 20:07:24 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/30 20:18:29 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static char	count_line_break(int fd, char *buffer, char *residue)
 {
 	int		bytes;
 
-	bytes = 0;
 	while (1)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
@@ -62,6 +61,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*buffer;
 	static char	*residue;
+	int			bytes;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read (fd, 0, 0))
 		return (NULL);
