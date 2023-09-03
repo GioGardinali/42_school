@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/31 16:27:52 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:19:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*buffer;
 	static char	*residue;
-	int			index;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read (fd, 0, 0))
 		return (NULL);

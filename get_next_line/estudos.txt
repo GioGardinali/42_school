@@ -1,0 +1,31 @@
+Com o Solidity, você pode criar contratos para usos como 
+votação, crowdfunding, leilões cegos e carteiras com múltiplas 
+assinaturas.
+
+Um blockchain é um banco de dados transacional compartilhado 
+globalmente. Isso significa que todos podem ler as entradas do 
+banco de dados apenas participando da rede. Se você quiser 
+alterar algo no banco de dados, terá que criar uma chamada 
+transação que deverá ser aceita por todos os outros. A palavra 
+transação implica que a alteração que você deseja fazer
+
+Além disso, uma transação é sempre assinada criptograficamente 
+pelo remetente (criador). Isso facilita a proteção do acesso a 
+modificações específicas do banco de dados. No exemplo da moeda 
+electrónica, um simples cheque garante que apenas a pessoa que 
+detém as chaves da conta pode transferir dela alguma 
+compensação, por exemplo, Ether.
+
+Enquanto um contrato está sendo criado, seu código ainda está 
+vazio. Por isso, você não deve cancelar o contrato em construção 
+até que o construtor termine de executá-lo.
+
+
+
+cryptozombies
+
+cada zombie tem DNA unico de 16 digitos
+2 primeiros define a cabeça, os 2 seguintes os olhos e assim por
+diante.
+
+Meu strchr está certo
