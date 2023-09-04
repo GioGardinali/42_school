@@ -12,7 +12,7 @@ int	main(void)
 	i = 0;
 	fd = open("estudos.txt", O_RDONLY);
 /* 	fd2 = open("teste2.txt", O_RDONLY); */
-	while (i < 5)
+	while (i < 3)
 	{
 		aux = get_next_line(fd);
 		printf("%s", aux);

@@ -1,5 +1,8 @@
-Com o Solidity, você pode criar contratos para usos como 
-votação, crowdfunding, leilões cegos e carteiras com múltiplas 
+Com o Solidity, você pode criar 
+contratos para usos como 
+votação, crowdfunding, 
+leilões cegos e carteiras 
+com múltiplas 
 assinaturas.
 
 Um blockchain é um banco de dados transacional compartilhado 
