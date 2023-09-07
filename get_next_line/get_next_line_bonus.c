@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 12:14:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/07 12:14:59 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-static char	*oneline_for_time(int fd, char *buffer, char *residue)
+static char	count_line_break(int fd, char *buffer, char *residue)
 {
-	ssize_t		bytes;
+	int		bytes;
 
 	while (1)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
+		{
 			return (free(residue), NULL);
+		}
 		else if (bytes == 0)
 			break ;
 		buffer[bytes] = '\0';
@@ -33,24 +35,24 @@ static char	*oneline_for_time(int fd, char *buffer, char *residue)
 	return (residue);
 }
 
-static char	*ft_split_line(char *line)
+static char	ft_split_line(char *line)
 {
-	int		i;
-	char	*rest_line;
+	char	*rest_memory;
+	int		index;
 
-	i = 0;
-	while (line[i] != '\n' && line[i] != '\0')
-		i++;
-	if (line[i] == '\0' || line[i + 1] == '\0')
+	index = 0;
+	while (line[index] != '\n' && line[index] != '\0')
+		index++;
+	while (line[index] != '\0' || line[index + 1] != '\0')
 		return (NULL);
-	rest_line = ft_substr(line, i + 1, ft_strlen(line) - i);
-	if (*rest_line == '\0')
+	rest_memory = ft_substr(line, index + 1, ft_strlen(line) - index);
+	if (*rest_memory == '\0')
 	{
-		free(rest_line);
-		rest_line = NULL;
+		free(rest_memory);
+		rest_memory = NULL;
 	}
-	line[i + 1] = '\0';
-	return (rest_line);
+	line[index + 1] = '\0';
+	return (rest_memory);
 }
 
 char	*get_next_line(int fd)
@@ -64,7 +66,7 @@ char	*get_next_line(int fd)
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	line = oneline_for_time(fd, buffer, residue);
+	line = count_line_break(fd, buffer, residue);
 	free(buffer);
 	if (line == NULL)
 		return (line);
