@@ -6,11 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 12:14:59 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/07 13:44:30 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 static char	count_line_break(int fd, char *buffer, char *residue)
 {
@@ -59,18 +59,18 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	char		*buffer;
-	static char	*residue;
+	static char	*residue[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read (fd, 0, 0))
 		return (NULL);
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	line = count_line_break(fd, buffer, residue);
+	line = count_line_break(fd, buffer, residue[fd]);
 	free(buffer);
 	if (line == NULL)
 		return (line);
-	residue = ft_split_line(line);
+	residue[fd] = ft_split_line(line);
 	return (line);
 }
 
