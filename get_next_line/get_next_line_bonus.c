@@ -6,71 +6,95 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 13:44:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:59:34 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-static char	count_line_break(int fd, char *buffer, char *residue)
+static char	*ft_readline(int fd, char *buffer)
 {
-	int		bytes;
+	char	*temp_buffer;
+	char	*read_buffer;
+	ssize_t	bytes_read;
 
-	while (1)
+	if (!buffer)
+		buffer = ft_calloc(1, sizeof(char));
+	temp_buffer = buffer;
+	read_buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	bytes_read = 1;
+	while (!ft_strchr(buffer, '\n') && bytes_read > 0)
 	{
-		bytes = read(fd, buffer, BUFFER_SIZE);
-		if (bytes < 0)
+		bytes_read = read(fd, read_buffer, BUFFER_SIZE);
+		if (bytes_read == -1)
 		{
-			return (free(residue), NULL);
+			free(read_buffer);
+			free(temp_buffer);
+			return (NULL);
 		}
-		else if (bytes == 0)
-			break ;
-		buffer[bytes] = '\0';
-		if (!residue)
-			residue = ft_strdup("");
-		residue = ft_strjoin(residue, buffer);
-		if (ft_strchr(residue, '\n'))
-			break ;
+		read_buffer[bytes_read] = '\0';
+		temp_buffer = buffer;
+		buffer = ft_strjoin(temp_buffer, read_buffer);
+		free(temp_buffer);
 	}
-	return (residue);
+	free(read_buffer);
+	return (buffer);
 }
 
-static char	ft_split_line(char *line)
+static char	*ft_getline(char *buffer)
 {
-	char	*rest_memory;
-	int		index;
+	char	*line;
+	size_t	index;
 
 	index = 0;
-	while (line[index] != '\n' && line[index] != '\0')
-		index++;
-	while (line[index] != '\0' || line[index + 1] != '\0')
+	if (!buffer[index])
 		return (NULL);
-	rest_memory = ft_substr(line, index + 1, ft_strlen(line) - index);
-	if (*rest_memory == '\0')
+	while (buffer[index] != '\n' && buffer[index])
+		index++;
+	line = ft_calloc(index + 2, sizeof(char));
+	index = 0;
+	while (*buffer != '\n' && *buffer)
+		line[index++] = *buffer++;
+	if (*buffer == '\n')
+		line[index] = '\n';
+	return (line);
+}
+
+static char	*ft_buffertrim(char *buffer)
+{
+	size_t	buffer_index;
+	size_t	line_index;
+	char	*line;
+
+	buffer_index = 0;
+	line_index = 0;
+	while (buffer[buffer_index] != '\n' && buffer[buffer_index])
+		buffer_index++;
+	if (!buffer[buffer_index])
 	{
-		free(rest_memory);
-		rest_memory = NULL;
+		free(buffer);
+		return (NULL);
 	}
-	line[index + 1] = '\0';
-	return (rest_memory);
+	line = ft_calloc(ft_strlen(buffer) - buffer_index + 1, sizeof(char));
+	buffer_index++;
+	while (buffer[buffer_index])
+		line[line_index++] = buffer[buffer_index++];
+	free(buffer);
+	return (line);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*line;
-	char		*buffer;
-	static char	*residue[1024];
+	static char	*buffer[1024];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read (fd, 0, 0))
+	if (fd == -1 || BUFFER_SIZE <= 0 || fd >= 1024)
 		return (NULL);
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
+	buffer[fd] = ft_readline(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = count_line_break(fd, buffer, residue[fd]);
-	free(buffer);
-	if (line == NULL)
-		return (line);
-	residue[fd] = ft_split_line(line);
+	line = ft_getline(buffer[fd]);
+	buffer[fd] = ft_buffertrim(buffer[fd]);
 	return (line);
 }
 

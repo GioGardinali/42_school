@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/31 18:14:15 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:09:44 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,30 +49,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-char	*ft_strdup(const char *s)
+size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
-	char	*copy;
-	int		index;
-	int		len;
+	size_t	index;
 
-	if (*s == '\0')
-	{
-		copy = malloc (sizeof (char) * 1);
-		copy[0] = '\0';
-		return (copy);
-	}
-	len = ft_strlen (s);
-	copy = malloc (sizeof (char) * len + 1);
-	if (!copy)
-		return (NULL);
 	index = 0;
-	while (s[index])
+	while ((index + 1) < size && src[index])
 	{
-		copy[index] = s[index];
+		dst[index] = src[index];
 		index++;
 	}
-	copy[index] = '\0';
-	return (copy);
+	if (size)
+		dst[index] = '\0';
+	return (ft_strlen(src));
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -91,28 +80,18 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*new_substr;
-	size_t	len_s;
-	size_t	index;
+	void	*p_nmemb;
+	size_t	overflow;
 
-	if (!s)
+	overflow = nmemb * size;
+	if (nmemb != 0 && (overflow / nmemb) != size)
 		return (NULL);
-	len_s = ft_strlen(s);
-	if (start >= len_s)
-		return (ft_strdup(""));
-	if (len > (len_s - start))
-		len = len_s - start;
-	new_substr = (char *)malloc(len * sizeof(char) + 1);
-	if (!new_substr)
+	p_nmemb = malloc(overflow);
+	if (!p_nmemb)
 		return (NULL);
-	index = 0;
-	while (s[index] != '\0' && index < len)
-	{
-		new_substr[index] = s[start + index];
-		index++;
-	}
-	new_substr[index] = '\0';
-	return (new_substr);
+	while (overflow--)
+		*(unsigned char *)(p_nmemb + overflow) = 0;
+	return (p_nmemb);
 }

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/27 14:53:15 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:20:05 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@
 
 //mandatory part 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strchr(const char *s, int c);
-
-//bonus
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcpy(char *dst, char *src, size_t size);
+size_t	ft_strlen(const char *s);
 
 #endif
