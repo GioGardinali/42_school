@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_upperpowerx.c                                   :+:      :+:    :+:   */
+/*   ft_putuphex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:08:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/08 14:09:11 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:25:29 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthexupper(unsigned long int adress)
+int	ft_putuphex(unsigned long int adress)
 {
 	char	hex[17];
 	char	*list;
@@ -38,3 +38,4 @@ int	ft_puthexupper(unsigned long int adress)
 	}
 	return (temp);
 }
+/* Eu passo 17, no char hex, pois preciso do espaço para o '\0' */
