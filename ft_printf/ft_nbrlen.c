@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrun_fd.c                                      :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/08 13:10:41 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/08 13:59:33 by gigardin         ###   ########.fr       */
+/*   Created: 2023/09/08 13:59:47 by gigardin          #+#    #+#             */
+/*   Updated: 2023/09/08 14:01:17 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_nbrun(unsigned int nbr)
+int	ft_nbrlen(int n)
 {
-	if (nbr >= 10)
+	size_t	count;
+
+	if (n < 0)
+		count = 1;
+	else
+		count = 0;
+	while (n)
 	{
-		ft_nbrun(nbr / 10);
+		n = n / 10;
+		count++;
 	}
-	ft_putchar_fd((char)(nbr % 10 + 48), 1);
-	return (ft_nbrlen(nbr));
+	return (count);
 }
