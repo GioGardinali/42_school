@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:08:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/08 16:25:29 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/08 19:41:37 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,9 @@ int	ft_putuphex(unsigned long int adress)
 	return (temp);
 }
 /* Eu passo 17, no char hex, pois preciso do espaço para o '\0' */
+/* hex[17]: Um array de caracteres de tamanho 17. Será usado para 
+armazenar os caracteres hexadecimais resultantes.
+list: Um ponteiro para uma string que contém os dígitos hexadecimais 
+(0-9 e A-F).
+temp: Uma variável temporária para armazenar valores intermediários.
+index: Um contador para rastrear a posição no array hex. */

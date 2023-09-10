@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 16:29:29 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:42:57 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,3 +130,18 @@ leitura */
 /* 1024 é o limite de arquivos que o sistema operacional usando
 open, consegue abrir simutaneamente até este limite de arquivo
 que denominamos como File Descriptor (fd) */
+
+/* Função getline
+
+	index = 0;
+	if (!buffer[index])
+		return (NULL);
+Aqui, o código verifica se o primeiro caractere do buffer é nulo 
+(ou seja, o buffer está vazio). Se o buffer estiver vazio, a 
+função retorna NULL, indicando que nenhuma linha foi encontrada.
+line = ft_calloc(index + 2, sizeof(char));
+A função ft_calloc é chamada para alocar dinamicamente memória para 
+a variável line. Ela aloca index + 2 bytes de memória e inicializa 
+todos os bytes com zero. Isso cria um buffer para armazenar a linha 
+extraída, mais um espaço para o caractere de nova linha ('\n') e um 
+espaço para o caractere nulo de terminação da string ('\0'). */
