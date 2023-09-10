@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/10 19:42:57 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/10 20:14:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*ft_readline(int fd, char *buffer)
 	return (buffer);
 }
 
-static char	*ft_getline(char *buffer)
+static char	*ft_getline_for_print(char *buffer)
 {
 	char	*line;
 	size_t	index;
@@ -49,7 +49,7 @@ static char	*ft_getline(char *buffer)
 	index = 0;
 	if (!buffer[index])
 		return (NULL);
-	while (buffer[index] != '\n' && buffer[index])
+	while (buffer[index] != '\n' && buffer[index] != '\0')
 		index++;
 	line = ft_calloc(index + 2, sizeof(char));
 	index = 0;
@@ -60,27 +60,27 @@ static char	*ft_getline(char *buffer)
 	return (line);
 }
 
-static char	*ft_buffertrim(char *buffer)
+static char	*ft_buffer_rest(char *buffer)
 {
 	size_t	buffer_index;
 	size_t	line_index;
-	char	*line;
+	char	*next_line;
 
 	buffer_index = 0;
 	line_index = 0;
-	while (buffer[buffer_index] != '\n' && buffer[buffer_index])
+	while (buffer[buffer_index] != '\n' && buffer[buffer_index] != '\0')
 		buffer_index++;
-	if (!buffer[buffer_index])
+	if (!buffer[buffer_index] == '\0')
 	{
 		free(buffer);
 		return (NULL);
 	}
-	line = ft_calloc(ft_strlen(buffer) - buffer_index + 1, sizeof(char));
+	next_line = ft_calloc(ft_strlen(buffer) - buffer_index + 1, sizeof(char));
 	buffer_index++;
-	while (buffer[buffer_index])
-		line[line_index++] = buffer[buffer_index++];
+	while (buffer[buffer_index] != '\0')
+		next_line[line_index++] = buffer[buffer_index++];
 	free(buffer);
-	return (line);
+	return (next_line);
 }
 
 char	*get_next_line(int fd)
@@ -93,8 +93,8 @@ char	*get_next_line(int fd)
 	buffer = ft_readline(fd, buffer);
 	if (!buffer)
 		return (NULL);
-	line = ft_getline(buffer);
-	buffer = ft_buffertrim(buffer);
+	line = ft_getline_for_print(buffer);
+	buffer = ft_buffer_rest(buffer);
 	return (line);
 }
 /* A função read () lê dados previamente gravados em um arquivo. 
@@ -145,3 +145,30 @@ a variável line. Ela aloca index + 2 bytes de memória e inicializa
 todos os bytes com zero. Isso cria um buffer para armazenar a linha 
 extraída, mais um espaço para o caractere de nova linha ('\n') e um 
 espaço para o caractere nulo de terminação da string ('\0'). */
+
+/* ft_buffer_rest, que é projetada para ser usada em conjunto com a 
+manipulação de um buffer de texto. A função extrai o restante 
+do conteúdo de um buffer de caracteres até encontrar o primeiro 
+caractere de nova linha ('\n') ou até o final do buffer ('\0'). 
+
+	while (buffer[buffer_index] != '\n' && buffer[buffer_index] != '\0')
+		buffer_index++;
+	if (!buffer[buffer_index])
+	{
+		free(buffer);
+		return (NULL);
+	}
+Após sair do loop, o código verifica se o caractere apontado 
+por buffer_index é um caractere nulo ('\0'). Se for, significa 
+que não há mais linhas no buffer, e a função libera a memória 
+alocada para o buffer (assumindo que ele não será mais usado) 
+e retorna NULL para indicar que não há mais conteúdo para ser 
+extraído.
+
+A função ft_calloc é chamada para alocar dinamicamente memória 
+para a variável line. Ela aloca memória para armazenar o restante 
+do conteúdo do buffer. O tamanho alocado é calculado como a 
+diferença entre o comprimento total do buffer e buffer_index, 
+mais 1 para o caractere nulo de terminação da string ('\0').
+Aí eu pulo 1 casa, pois eu estou no '\n', para seguir na 
+criação da string. */

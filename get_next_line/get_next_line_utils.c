@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 15:09:44 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:48:15 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[index] = '\0';
 	return (str);
-}
-
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
-{
-	size_t	index;
-
-	index = 0;
-	while ((index + 1) < size && src[index])
-	{
-		dst[index] = src[index];
-		index++;
-	}
-	if (size)
-		dst[index] = '\0';
-	return (ft_strlen(src));
 }
 
 char	*ft_strchr(const char *s, int c)

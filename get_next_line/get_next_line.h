@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:39 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 16:20:05 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/10 19:48:24 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*get_next_line(int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcpy(char *dst, char *src, size_t size);
 size_t	ft_strlen(const char *s);
 
 #endif
