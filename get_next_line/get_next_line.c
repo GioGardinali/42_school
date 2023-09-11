@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/10 20:14:32 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/10 23:46:22 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	*ft_readline(int fd, char *buffer)
 	temp_buffer = buffer;
 	read_buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	bytes_read = 1;
-	while (!ft_strchr(buffer, '\n') && bytes_read > 0)
+	while (!ft_strchr(buffer, '\n') && bytes_read)
 	{
 		bytes_read = read(fd, read_buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -70,7 +70,7 @@ static char	*ft_buffer_rest(char *buffer)
 	line_index = 0;
 	while (buffer[buffer_index] != '\n' && buffer[buffer_index] != '\0')
 		buffer_index++;
-	if (!buffer[buffer_index] == '\0')
+	if (buffer[buffer_index] == '\0')
 	{
 		free(buffer);
 		return (NULL);
@@ -131,6 +131,35 @@ leitura */
 open, consegue abrir simutaneamente até este limite de arquivo
 que denominamos como File Descriptor (fd) */
 
+/* ft_readline que lê uma linha de texto de um descritor de 
+arquivo (file descriptor) fd e a armazena em um buffer buffer. 
+Ele lê os dados em blocos de tamanho BUFFER_SIZE e concatena 
+esses blocos até encontrar uma nova linha ('\n') ou até atingir
+ o final do arquivo
+
+ fd: O descritor de arquivo a partir do qual os dados serão 
+ lidos.
+buffer: Um ponteiro para um buffer de caracteres que armazenará
+ a linha lida. 
+ temp_buffer é inicializado com o valor de buffer. Isso é feito
+  para permitir que buffer seja realocado e estender a 
+  capacidade de armazenamento de dados
+  bytes_read é inicializado com 1, para que o loop comece 
+  a executar.
+
+  read(fd, read_buffer, BUFFER_SIZE): Isso é uma chamada à 
+  função read, que é uma função de entrada/saída (I/O) do 
+  sistema operacional em C, usada para ler dados de um arquivo 
+  ou descritor de arquivo. Os parâmetros são os seguintes:
+
+fd: O descritor de arquivo a partir do qual os dados serão 
+lidos.
+read_buffer: O buffer onde os dados lidos serão armazenados.
+BUFFER_SIZE: O tamanho máximo de dados que podem ser lidos em 
+uma única chamada. É uma constante que determina o tamanho do 
+bloco de leitura.
+ */
+
 /* Função getline
 
 	index = 0;
@@ -172,3 +201,15 @@ diferença entre o comprimento total do buffer e buffer_index,
 mais 1 para o caractere nulo de terminação da string ('\0').
 Aí eu pulo 1 casa, pois eu estou no '\n', para seguir na 
 criação da string. */
+
+/* chamada get_next_line que é usada para ler e retornar a 
+próxima linha de um arquivo representado por um descritor 
+de arquivo (fd). A função segue uma abordagem de leitura 
+incremental, onde ela lê o arquivo em blocos e mantém um 
+estado persistente entre as chamadas para rastrear o 
+progresso da leitura. 
+
+buffer: Uma variável estática (mantém seu valor entre chamadas
+ da função) que é usada para armazenar o estado da leitura 
+ entre chamadas. Ela armazena os dados não processados 
+ do arquivo. */

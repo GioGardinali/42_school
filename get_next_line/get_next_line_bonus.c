@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:28:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/07 16:59:34 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/10 23:49:05 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	*ft_readline(int fd, char *buffer)
 	temp_buffer = buffer;
 	read_buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	bytes_read = 1;
-	while (!ft_strchr(buffer, '\n') && bytes_read > 0)
+	while (!ft_strchr(buffer, '\n') && bytes_read)
 	{
 		bytes_read = read(fd, read_buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -41,7 +41,7 @@ static char	*ft_readline(int fd, char *buffer)
 	return (buffer);
 }
 
-static char	*ft_getline(char *buffer)
+static char	*ft_getline_for_print(char *buffer)
 {
 	char	*line;
 	size_t	index;
@@ -49,7 +49,7 @@ static char	*ft_getline(char *buffer)
 	index = 0;
 	if (!buffer[index])
 		return (NULL);
-	while (buffer[index] != '\n' && buffer[index])
+	while (buffer[index] != '\n' && buffer[index] != '\0')
 		index++;
 	line = ft_calloc(index + 2, sizeof(char));
 	index = 0;
@@ -60,27 +60,27 @@ static char	*ft_getline(char *buffer)
 	return (line);
 }
 
-static char	*ft_buffertrim(char *buffer)
+static char	*ft_buffer_rest(char *buffer)
 {
 	size_t	buffer_index;
 	size_t	line_index;
-	char	*line;
+	char	*next_line;
 
 	buffer_index = 0;
 	line_index = 0;
-	while (buffer[buffer_index] != '\n' && buffer[buffer_index])
+	while (buffer[buffer_index] != '\n' && buffer[buffer_index] != '\0')
 		buffer_index++;
-	if (!buffer[buffer_index])
+	if (buffer[buffer_index] == '\0')
 	{
 		free(buffer);
 		return (NULL);
 	}
-	line = ft_calloc(ft_strlen(buffer) - buffer_index + 1, sizeof(char));
+	next_line = ft_calloc(ft_strlen(buffer) - buffer_index + 1, sizeof(char));
 	buffer_index++;
-	while (buffer[buffer_index])
-		line[line_index++] = buffer[buffer_index++];
+	while (buffer[buffer_index] != '\0')
+		next_line[line_index++] = buffer[buffer_index++];
 	free(buffer);
-	return (line);
+	return (next_line);
 }
 
 char	*get_next_line(int fd)
@@ -93,8 +93,8 @@ char	*get_next_line(int fd)
 	buffer[fd] = ft_readline(fd, buffer[fd]);
 	if (!buffer[fd])
 		return (NULL);
-	line = ft_getline(buffer[fd]);
-	buffer[fd] = ft_buffertrim(buffer[fd]);
+	line = ft_getline_for_print(buffer[fd]);
+	buffer[fd] = ft_buffer_rest(buffer[fd]);
 	return (line);
 }
 
