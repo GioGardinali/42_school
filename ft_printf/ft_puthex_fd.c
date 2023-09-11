@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 18:14:35 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/11 06:15:08 by gigardin         ###   ########.fr       */
+/*   Created: 2023/09/11 05:57:57 by gigardin          #+#    #+#             */
+/*   Updated: 2023/09/11 06:16:36 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_puthex_fd(unsigned long int adress)
+{
+	int	count;
 
-//mandatory part 
+	if (!adress)
+	{
+		return (ft_putstr_fd("(nil)", 1));
+	}
+	ft_putstr_fd("0x", 1);
+	count = ft_puthexlower((unsigned long int)adress) + 2;
+	return (count);
+}
 
-#endif
+/* Esta função chamada ft_puthex_fd parece ser uma função que 
+formata e imprime um valor hexadecimal em um descritor de 
+arquivo (fd). */
