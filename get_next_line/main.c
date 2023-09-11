@@ -10,8 +10,8 @@ int	main(void)
 	char *aux;
 /* 	char *aux2; */
 	i = 0;
-	fd = open("estudos.txt", O_RDONLY);
-/* 	fd2 = open("teste2.txt", O_RDONLY); */
+	fd = open("miracles.txt", O_RDONLY);
+/* 	fd2 = open("karma.txt", O_RDONLY); */
 	while (i < 3)
 	{
 		aux = get_next_line(fd);
