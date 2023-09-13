@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 12:42:51 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/08 12:47:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:05:43 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
@@ -27,4 +27,5 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putnbr_fd(n / 10, fd);
 		ft_putchar_fd((n % 10) + 48, fd);
 	}
+	return (1);
 }

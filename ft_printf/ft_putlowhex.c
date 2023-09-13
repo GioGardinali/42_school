@@ -6,9 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:24:48 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/08 19:26:17 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:45:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_putlowhex(unsigned long int adress)
 {

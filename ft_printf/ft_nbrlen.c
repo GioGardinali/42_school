@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:59:47 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/08 14:01:17 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:57:53 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_nbrlen(int n)
+int	ft_nbrlen(unsigned long int n)
 {
 	size_t	count;
 
