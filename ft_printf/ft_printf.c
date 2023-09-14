@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:14:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/13 19:05:09 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/13 22:20:22 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static int	check_flag(const char *str_char, va_list args)
 	else if (*str_char == 'd' || *str_char == 'i')
 		return (ft_putnbr_fd(va_arg(args, int), 1));
 	else if (*str_char == 'u')
-		return (ft_put_nbrun((va_arg(args, unsigned int))));
+		return (ft_nbrun((va_arg(args, unsigned int))));
 	else if (*str_char == 'x')
-		return (ft_puthexlower((va_arg(args, unsigned int))));
+		return (ft_putlowhex((va_arg(args, unsigned int))));
 	else if (*str_char == 'X')
-		return (ft_puthexupper((va_arg(args, unsigned int))));
+		return (ft_putuphex((va_arg(args, unsigned int))));
 	else if (*str_char == '%')
 		return (ft_putchar_fd('%', 1));
 	else

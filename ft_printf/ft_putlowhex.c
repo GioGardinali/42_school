@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:24:48 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/13 16:45:14 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:22:02 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_putlowhex(unsigned long int adress)
 {
-	char	hex[17];
-	char	*list;
-	int		temp;
-	int		index;
+	char				hex[17];
+	char				*list;
+	unsigned int		temp;
+	int					index;
 
 	list = "0123456789abcdef";
 	temp = 0;

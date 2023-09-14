@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:14:35 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/13 19:42:14 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/13 20:07:18 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int		ft_printf(const char *str, ...);
 int		ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(char *s, int fd);
-int		ft_nbrlen(int n);
+int		ft_nbrlen(unsigned long int n);
 int		ft_nbrun(unsigned int nbr);
 int		ft_putlowhex(unsigned long int adress);
 int		ft_putnbr_fd(int n, int fd);
