@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:14:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/09/14 00:58:29 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/09/14 02:25:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_printf(const char *str, ...)
 			str++;
 			count += 1;
 		}
-	}
+	}	
 	va_end(args);
 	return (count);
 }
