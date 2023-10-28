@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 18:58:53 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:03:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,30 @@
 # define ENEMY_2 "./images/enemy_2.png"
 # define ENEMY_3 "./images/enemy_3.png"
 # define ENEMY_4 "./images/enemy_4.png"
+
+// struct for animate images
+typedef struct s_animate
+{
+	void	*ptr1;
+	void	*ptr2;
+	void	*ptr3;
+	void	*ptr4;
+	int		width;
+	int		height;
+}	t_animate;
+
+typedef struct s_player
+{
+	void	*f_ptr;
+	void	*r_ptr;
+	void	*l_ptr;
+	void	*b_ptr;
+	int		width;
+	int		height;
+	int		x;
+	int		y;
+	int		direction;
+	int		move_count;
+}	t_player;
 
 #endif
