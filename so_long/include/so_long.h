@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 20:30:40 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:55:09 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,25 @@ typedef struct s_sprite
 	int		x;
 	int		y;
 }	t_sprite;
+
+// struct for all datas
+
+typedef struct s_data
+{
+	t_player	human;
+	t_animate	ground;
+	t_animate	wall;
+	t_animate	money_enemy;
+	t_animate	win_portal;
+	t_animate	happiness;
+	t_sprite	game_over;
+	// t_animate	loser_greedy;
+	// t_sprite	you_win;
+	// t_animate	portal;
+	// t_map		map;
+	// int			config_stage;
+	// void		*mlx42_connection;
+	// t_win		win;
+}	t_data;
 
 #endif
