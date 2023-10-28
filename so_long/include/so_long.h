@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 18:49:41 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:58:53 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,11 @@
 # define PLAYER_R "./images/player_right.png"
 # define PLAYER_L "./images/player_left.png"
 # define CPLAYER_B "./images/player_back.png"
+
+/*Sprites - enemy*/
+# define ENEMY_1 "./images/enemy_1.png"
+# define ENEMY_2 "./images/enemy_2.png"
+# define ENEMY_3 "./images/enemy_3.png"
+# define ENEMY_4 "./images/enemy_4.png"
 
 #endif
