@@ -6,19 +6,22 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 15:25:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 15:35:56 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFFER_SIZE 42
 
 # include <unistd.h> //write, read
 # include <stdlib.h> // malloc, free, size_t, NULL
 # include <stdarg.h> //va_start, va_arg, va_copy, va_end
 # include <stdint.h> //SIZE_MAX
 # include <limits.h> //INT_MAX
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_list
 {
@@ -74,5 +77,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//gnl
+char	*get_next_line(int fd);
 
 #endif
