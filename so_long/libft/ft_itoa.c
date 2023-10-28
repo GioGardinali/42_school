@@ -6,27 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:17:41 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/10 20:20:42 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:13:05 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_nbrlen(int n)
-{
-	size_t	count;
-
-	if (n < 0)
-		count = 1;
-	else
-		count = 0;
-	while (n)
-	{
-		n = n / 10;
-		count++;
-	}
-	return (count);
-}
 
 char	*ft_itoa(int n)
 {
