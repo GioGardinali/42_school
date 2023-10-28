@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 15:35:56 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:16:25 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <limits.h> //INT_MAX
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 42 // gnl
 # endif
 
 typedef struct s_list
@@ -55,11 +55,11 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 //mandatory part 2
-void	ft_putchar_fd(char c, int fd);
+int		ft_putchar_fd(char c, int fd);
 char	*ft_itoa(int n);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -67,7 +67,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 
-//bonus
+//bonus libft
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -80,5 +80,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //gnl
 char	*get_next_line(int fd);
+
+//printf and new functions
+int	ft_printf(const char *str, ...);
+int		ft_nbrun(unsigned int nbr);
+int		ft_nbrlen(unsigned long int n);
+int		ft_puthex_fd(unsigned long int adress);
+int		ft_putlowhex(unsigned long int adress);
+int		ft_putuphex(unsigned long int adress);
 
 #endif

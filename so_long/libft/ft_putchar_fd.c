@@ -6,13 +6,14 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:19:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/05 20:29:44 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 15:51:56 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }
