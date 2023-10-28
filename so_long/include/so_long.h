@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 20:55:09 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:59:23 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@
 # define COLLECT4 "./images/collect_4.png"
 
 /*Sprites - player*/
-# define PLAYER_F "./images/player_front.png"
+# define PLAYER_UP "./images/player_up.png"
 # define PLAYER_R "./images/player_right.png"
 # define PLAYER_L "./images/player_left.png"
-# define CPLAYER_B "./images/player_back.png"
+# define CPLAYER_D "./images/player_down.png"
 
 /*Sprites - enemy*/
 # define ENEMY_1 "./images/enemy_1.png"
