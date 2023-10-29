@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 20:59:23 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/28 21:13:28 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,27 @@
 # define COLLECT4 "./images/collect_4.png"
 
 /*Sprites - player*/
-# define PLAYER_UP "./images/player_up.png"
-# define PLAYER_R "./images/player_right.png"
-# define PLAYER_L "./images/player_left.png"
-# define CPLAYER_D "./images/player_down.png"
+// # define PLAYER_UP "./images/player_up.png"
+// # define PLAYER_R "./images/player_right.png"
+// # define PLAYER_L "./images/player_left.png"
+// # define CPLAYER_D "./images/player_down.png"
 
 /*Sprites - enemy*/
 # define ENEMY_1 "./images/enemy_1.png"
 # define ENEMY_2 "./images/enemy_2.png"
 # define ENEMY_3 "./images/enemy_3.png"
 # define ENEMY_4 "./images/enemy_4.png"
+
+/*Sprites - player_loser*/
+// # define LOSER1 "./images/loser_1.png"
+// # define LOSER2 "./images/loser_2.png"
+// # define LOSER3 "./images/loser_3.png"
+
+/*Sprites - exit_win*/
+// # define WIN_PORTAL1 "./images/win_portal1.png"
+// # define WIN_PORTAL2 "./images/win_portal2.png"
+// # define WIN_PORTAL3 "./images/win_portal3.png"
+// # define WIN_PORTAL4 "./images/win_portal4.png"
 
 // struct for animate images
 typedef struct s_animate
