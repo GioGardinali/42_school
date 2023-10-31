@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/31 20:19:22 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/31 20:33:28 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_animate
 	void	*ptr4;
 	int		width;
 	int		height;
+	char	*texture;
 }	t_animate;
 
 // struct for player movement
@@ -88,7 +89,7 @@ typedef struct s_sprite
 	int		height;
 	int		x;
 	int		y;
-	
+	char	*texture;
 }	t_sprite;
 
 // struct for all datas
