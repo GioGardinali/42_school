@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/30 20:41:59 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/31 20:19:22 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ typedef struct s_sprite
 	int		height;
 	int		x;
 	int		y;
+	
 }	t_sprite;
 
 // struct for all datas
