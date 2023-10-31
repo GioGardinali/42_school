@@ -6,7 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 20:48:09 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/31 20:48:10 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/10/31 20:50:42 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/so_long.h"
+
+int main(int argc, char **argv)
+{
+	
+}
