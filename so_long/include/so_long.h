@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/01 22:42:46 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/01 22:52:17 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ typedef struct s_sprite
 typedef struct s_data
 {
 	void		*mlx42_connection;
+	int			config_stage;
 	t_player	human;
 	t_animate	ground;
 	t_animate	wall;
