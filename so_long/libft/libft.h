@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 19:05:17 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/02 05:39:45 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //gnl
-char	*get_next_line(int fd);
+char	*ft_get_next_line(int fd);
 
 //printf and new functions
 int		ft_printf(const char *str, ...);
