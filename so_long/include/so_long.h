@@ -6,13 +6,17 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/01 22:52:17 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/01 23:14:37 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "../libft/libft.h" // my libft
+# include "../MLX42/include/MLX42/MLX42.h"
+# include <stdlib.h> // malloc, free, size_t, NULL
+# include <fcntl.h> // open, close
 /*Macros*/
 # ifndef TILE_SIZE
 #  define TILE_SIZE 64
@@ -123,5 +127,8 @@ typedef struct s_data
 	// t_sprite	you_win;
 	// int			config_stage;
 }	t_data;
+
+void		read_map(int argc, t_data *game);
+static void	size_map(t_data *game);
 
 #endif
