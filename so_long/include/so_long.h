@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/31 20:33:28 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/01 22:42:46 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,19 @@
 // # define WIN_PORTAL3 "./images/win_portal3.png"
 // # define WIN_PORTAL4 "./images/win_portal4.png"
 
+// struct for map
+typedef struct s_map
+{
+	char	*file;
+	char	**grid_matriz;
+	int		columns;
+	int		rows;
+	int		player_count;
+	int		collect_count;
+	int		exit_count;
+	int		valid_path;
+}	t_map;
+
 // struct for animate images
 typedef struct s_animate
 {
@@ -93,9 +106,9 @@ typedef struct s_sprite
 }	t_sprite;
 
 // struct for all datas
-
 typedef struct s_data
 {
+	void		*mlx42_connection;
 	t_player	human;
 	t_animate	ground;
 	t_animate	wall;
@@ -103,12 +116,11 @@ typedef struct s_data
 	t_animate	win_portal;
 	t_animate	happiness;
 	t_sprite	game_over;
+	t_map		map;
+	// t_win		win;
 	// t_animate	loser_greedy;
 	// t_sprite	you_win;
-	// t_map		map;
 	// int			config_stage;
-	// void		*mlx42_connection;
-	// t_win		win;
 }	t_data;
 
 #endif
