@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/02 09:40:07 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:16:37 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,11 +125,15 @@ typedef struct s_data
 	// t_win		win;
 	// t_animate	loser_greedy;
 	// t_sprite	you_win;
-	// int			config_stage;
 }	t_data;
 
 void		read_map(int argc, t_data *game);
 static void	size_map(t_data *game);
 static void	allocate_content_map(t_data *game);
+
+void		validate_content_map( t_data *game);
+void		check_valid_path(t_data *game);
+
+void	initiate_game(t_data *game);
 
 #endif
