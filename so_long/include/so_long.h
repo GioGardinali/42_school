@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/01 23:14:37 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/02 09:15:13 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@
 typedef struct s_map
 {
 	char	*file;
-	char	**grid_matriz;
+	char	**grid_matrix;
 	int		columns;
 	int		rows;
 	int		player_count;
