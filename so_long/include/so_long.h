@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/02 14:16:37 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:59:26 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,13 @@ typedef struct s_sprite
 	char	*texture;
 }	t_sprite;
 
+typedef struct s_win
+{
+	void	*mlx_win;
+	int		width;
+	int		height;
+}	t_win;
+
 // struct for all datas
 typedef struct s_data
 {
@@ -122,7 +129,7 @@ typedef struct s_data
 	t_animate	happiness;
 	t_sprite	game_over;
 	t_map		map;
-	// t_win		win;
+	t_win		win;
 	// t_animate	loser_greedy;
 	// t_sprite	you_win;
 }	t_data;
@@ -134,6 +141,6 @@ static void	allocate_content_map(t_data *game);
 void		validate_content_map( t_data *game);
 void		check_valid_path(t_data *game);
 
-void	initiate_game(t_data *game);
+void		initiate_game(t_data *game);
 
 #endif
