@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/02 13:25:19 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:19:13 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,19 @@
 void	read_map(int argc, t_data *game)
 {
 	game->config_stage = 1;
+	check_file_map(argc, game);
 	//criar check de mapa
 	size_map(game);
 	allocate_content_map(game);
+}
+
+static void check_file_map(int argc, *game)
+{
+	int fd;
+	int y;
+
+	y = 0;
+	
 }
 
 static void	size_map(t_data *game)
