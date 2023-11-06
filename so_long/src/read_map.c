@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/06 20:19:13 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:56:22 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,26 @@ void	read_map(int argc, t_data *game)
 	allocate_content_map(game);
 }
 
-static void check_file_map(int argc, *game)
+static void	check_file_map(int argc, t_data *game)
 {
-	int fd;
-	int y;
+	int		fd;
+	char	buffer[1];
 
-	y = 0;
-	
+	if (argc < 2)
+		//error poucos argumentos;
+	if (argc > 2)
+		//error muitos argumentos;
+	if (ft_strnstr(game->map.file, ".ber", ft_strlen(game->map.file)) == NULL)
+		// error de não ter extensão .ber
+	fd = open(game->map.file, O_RDWR);
+	if (fd == -1)
+		//error de fd;
+	if (read(fd, buffer, 1) == 0)
+	{
+		close(fd);
+		//error arquivo do mapa vazio;
+	}
+	close(fd);
 }
 
 static void	size_map(t_data *game)
