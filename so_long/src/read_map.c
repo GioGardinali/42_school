@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 10:56:57 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:13:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,22 @@ static void	check_file_map(int argc, t_data *game)
 	char	buffer[1];
 
 	if (argc < 2)
+		handle_error(0, "You need to use: ./so_long <filename.ber>\n", game);
 		//error poucos argumentos;
 	if (argc > 2)
+		handle_error(0, "You provided more arguments than necessary!\n", game);
 		//error muitos argumentos;
 	if (ft_strnstr(game->map.file, ".ber", ft_strlen(game->map.file)) == NULL)
+		handle_error(0, "Map not in .ber extension!\n", game);
 		// error de não ter extensão .ber
 	fd = open(game->map.file, O_RDWR);
 	if (fd == -1)
+		handle_error(1, "Error!\n", game);
 		//error de fd;
 	if (read(fd, buffer, 1) == 0)
 	{
 		close(fd);
+		handle_error(0, "Map file is empty!\n", game);
 		//error arquivo do mapa vazio;
 	}
 	close(fd);
