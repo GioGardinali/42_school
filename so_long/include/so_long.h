@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 15:28:59 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:44:25 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,8 @@ static void	size_map(t_data *game);
 static void	allocate_content_map(t_data *game);
 
 void		validate_content_map( t_data *game);
+static void	check_count_content(t_data *game);
+static void	parse_map(t_data *game);
 void		check_valid_path(t_data *game);
 
 void		initiate_game(t_data *game);
