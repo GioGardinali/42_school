@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 18:14:34 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:52:58 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	allocate_flag_grid(t_data *game, t_map *seen_flag)
 	}
 }
 
-static void start_position(t_data *game, t_map *seen_flag)
+static void	start_position(t_data *game, t_map *seen_flag)
 {
 
 }
