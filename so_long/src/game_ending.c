@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:04:31 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 13:49:53 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:54:45 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	end_game(t_data *game)
 	free_sprites_background(game); // criar
 	free_sprites_collectible_and_player(game); // criar
 	free_sprites_ending_and_enemy(game); // criar
-	end_mlx_connect(game); // criar
+	end_mlx42_connect(game); // criar
 	if (game->config_stage < 4)
 		exit (EXIT_SUCCESS);
 }
