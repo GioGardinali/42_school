@@ -6,22 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:41:57 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 17:03:38 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:07:12 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-void	validate_content_map( t_data *game)
-{
-	game->config_stage = 2;
-	game->map.player_count = 0;
-	game->map.collect_count = 0;
-	game->map.exit_count = 0;
-	parse_map(game);
-	check_cotent_count(game);
-	check_wall(game);
-}
 
 static void	parse_map(t_data *game)
 {
@@ -85,3 +74,14 @@ static void	check_wall(t_data *game)
 }
 //criar check de validação para o cenário de duas paredes, onde uma delas
 // tem o 0 em vez de 1
+
+void	validate_content_map( t_data *game)
+{
+	game->config_stage = 2;
+	game->map.player_count = 0;
+	game->map.collect_count = 0;
+	game->map.exit_count = 0;
+	parse_map(game);
+	check_cotent_count(game);
+	check_wall(game);
+}
