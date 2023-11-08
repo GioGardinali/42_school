@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/03 18:59:26 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:07:45 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,8 @@ void		validate_content_map( t_data *game);
 void		check_valid_path(t_data *game);
 
 void		initiate_game(t_data *game);
+
+void 		handle_error(int error_type, char *error_msg, t_data *game);
+void		free_map(t_map *map);
 
 #endif
