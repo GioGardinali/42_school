@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 11:17:11 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:28:59 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ typedef struct s_data
 	t_animate	wall;
 	t_animate	money_enemy;
 	t_animate	win_portal;
+	t_sprite	portal;
 	t_animate	happiness;
 	t_sprite	game_over;
 	t_map		map;
@@ -143,7 +144,7 @@ void		check_valid_path(t_data *game);
 
 void		initiate_game(t_data *game);
 
-void 		handle_error(int error_type, char *error_msg, t_data *game);
+void		handle_error(int error_type, char *error_msg, t_data *game);
 void		free_map(t_map *map);
 
 #endif
