@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:41:57 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 16:59:28 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:03:38 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,5 @@ static void	check_wall(t_data *game)
 		i++;
 	}
 }
+//criar check de validação para o cenário de duas paredes, onde uma delas
+// tem o 0 em vez de 1
