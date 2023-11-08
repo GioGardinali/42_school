@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 18:52:46 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/08 20:03:59 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ static void	check_wall(t_data *game);
 
 void		check_valid_path(t_data *game);
 static void	allocate_flag_grid(t_data *game, t_map *seen_flag);
-static void	start_position(t_data *game, t_map *seen_flag);
+static void	start_position_player(t_data *game, t_map *seen_flag);
 
 void		initiate_game(t_data *game);
 
