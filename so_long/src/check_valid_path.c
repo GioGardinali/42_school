@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 20:25:58 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/09 17:53:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ static void	start_position_player(t_data *game, t_map *seen_flag)
 
 void	check_neighbors(t_data *game, int curr_x, int curr_y, t_map *seen_flag)
 {
-	
+	int 
 }
