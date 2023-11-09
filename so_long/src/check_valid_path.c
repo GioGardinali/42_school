@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/09 17:53:14 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:24:58 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	check_valid_path(t_data *game)
 	seen_flag.collect_count = 0;
 	allocate_flag_grid(game, &seen_flag);
 	start_position(game, &seen_flag);
+	check_neighbors(game, game->human.x, game->human.y, &seen_flag);
 }
 
 static void	allocate_flag_grid(t_data *game, t_map *seen_flag)
@@ -70,7 +71,23 @@ static void	start_position_player(t_data *game, t_map *seen_flag)
 	y++;
 }
 
-void	check_neighbors(t_data *game, int curr_x, int curr_y, t_map *seen_flag)
+static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag)
 {
-	int 
+	char	check_valid;
+
+	check_valid = 0;
+	if (seen_flag->grid_matrix[y][x] == 0 && game->map.grid_matrix[y][x] != '1')
+		check_valid = 1;
+	seen_flag->grid_matrix[y][x] = 1;
+	return (check_valid);
+}
+// Essa parte é onde inpedimos o caractere '1' de ser válido no mapa,
+//assim o boneco não segue adiante, que vai ser na outra função.
+
+void	check_neighbors(t_data *game, int coord_x, int coord_y, t_map *seen_flag)
+{
+	int i;
+	int x;
+	int y;
+	
 }
