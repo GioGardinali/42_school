@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/10 15:49:37 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:49:00 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,23 @@ void	check_neighbors(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 	int			y;
 	t_direction	direction;
 
+	i = 0;
+	direction = (t_direction){.x = {0, 1, 0, -1}, .y = {0, 1, 0, -1}};
+	while (i <= 3)
+	{
+		x = refe_x + direction.x[i];
+		y = refe_y + direction.y[i];
+		if (x >= 0 && x < game->map.columns && y >= 0 && y < game->map.rows)
+		{
+			if (game->map.grid_matrix[y][x] == 'E')
+				seen_flag->valid_path = 1;
+			if (game->map.grid_matrix[y][x] == 'C')
+				seen_flag->collect_count++;
+			if (check_valid_tile(game, x, y, seen_flag) == 1)
+				check_neighbors(game, x, y, seen_flag);
+		}
+		i++;
+	}
 }
 
 // decompor a função abaixo para destrichar e escrever ela
