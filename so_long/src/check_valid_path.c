@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/09 18:32:10 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:49:37 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,42 @@ static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag)
 
 void	check_neighbors(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 {
-	int	i;
-	int	x;
-	int	y;
+	int			i;
+	int			x;
+	int			y;
+	t_direction	direction;
 
 }
+
+// decompor a função abaixo para destrichar e escrever ela
+//ela é uma função que vai checar os vizinhos, ou seja, o que tá em volta
+//do boneco, dessa forma, eu conto o número de coletáveis pegos se eu estiver
+//em um coletável até está tudo coletado, além
+/*Check neighbor tiles in order: up(0.-1), right(1.0), down(0. 1), left(-1.0)*/
+/*Direction struct initialized using compound literal*/
+/*Look every tile using Depth First Search Algorithm*/
+/* void	check_neighbors(t_data *game, int curr_x, int curr_y, t_map *seen_flag)
+{
+	int		i;
+	int		x;
+	int		y;
+	t_dir	dir;
+
+	i = 0;
+	dir = (t_dir){.x = {0, 1, 0, -1}, .y = {-1, 0, 1, 0}};
+	while (i < 4)
+	{
+		x = curr_x + dir.x[i];
+		y = curr_y + dir.y[i];
+		if (x >= 0 && x < game->map.columns && y >= 0 && y < game->map.rows)
+		{
+			if (game->map.grid[y][x] == 'E')
+				seen_flag->valid_path = 1;
+			if (game->map.grid[y][x] == 'C')
+				seen_flag->collect_count++;
+			if (tile_is_valid(game, x, y, seen_flag) == 1)
+				check_neighbors(game, x, y, seen_flag);
+		}
+		i++;
+	}
+} */

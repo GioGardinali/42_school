@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 20:03:59 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:47:47 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef struct s_map
 	int		exit_count;
 	int		valid_path;
 }	t_map;
+
+typedef struct s_direction
+{
+	int	x[4];
+	int	y[4];
+}	t_direction;
 
 // struct for animate images
 typedef struct s_animate
