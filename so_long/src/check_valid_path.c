@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/10 16:52:43 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:06:02 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag)
 // Essa parte é onde inpedimos o caractere '1' de ser válido no mapa,
 //assim o boneco não segue adiante, que vai ser na outra função.
 
-void	check_neighbors(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
+void	check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 {
 	int			i;
 	int			x;
