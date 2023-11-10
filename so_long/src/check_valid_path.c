@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/10 16:51:20 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:52:43 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,4 +113,5 @@ void	check_neighbors(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 // decompor a função abaixo para destrichar e escrever ela
 //ela é uma função que vai checar os vizinhos, ou seja, o que tá em volta
 //do boneco, dessa forma, eu conto o número de coletáveis pegos se eu estiver
-//em um coletável até está tudo coletado, além
+//em um coletável até está tudo coletado
+//entender como coordenadas funciona
