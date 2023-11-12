@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/10 19:05:13 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:34:21 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,18 @@
 #  define TILE_SIZE 64
 # endif
 
+# ifndef IMAGE_WIDTH
+#  define IMAGE_WIDTH 64
+# endif
+# ifndef IMAGE_HEIGHT
+#  define IMAGE_HEIGHT 64
+# endif
+
 /*Sprites - brackground*/
-# define GROUND1 "./images/ground_1.png"
-# define GROUND2 "./images/ground_2.png"
-# define GROUND3 "./images/ground_3.png"
-# define GROUND4 "./images/ground_4.png"
+# define GROUND_1 "./images/ground_1.png"
+# define GROUND_2 "./images/ground_2.png"
+# define GROUND_3 "./images/ground_3.png"
+# define GROUND_4 "./images/ground_4.png"
 
 /*Sprites - collectible*/
 # define COLLECT1 "./images/collect_1.png"
@@ -35,16 +42,22 @@
 # define COLLECT4 "./images/collect_4.png"
 
 /*Sprites - player*/
-// # define PLAYER_UP "./images/player_up.png"
-// # define PLAYER_R "./images/player_right.png"
-// # define PLAYER_L "./images/player_left.png"
-// # define CPLAYER_D "./images/player_down.png"
+# define PLAYER_UP "./images/player_up.png"
+# define PLAYER_R "./images/player_right.png"
+# define PLAYER_L "./images/player_left.png"
+# define PLAYER_D "./images/player_down.png"
 
 /*Sprites - enemy*/
 # define ENEMY_1 "./images/enemy_1.png"
 # define ENEMY_2 "./images/enemy_2.png"
 # define ENEMY_3 "./images/enemy_3.png"
 # define ENEMY_4 "./images/enemy_4.png"
+
+/*Sprites - Wall*/
+# define WALL_1 "./images/wall_1.png"
+# define WALL_2 "./images/wall_2.png"
+# define WALL_3 "./images/wall_3.png"
+# define WALL_4 "./images/wall_4.png"
 
 /*Sprites - player_loser*/
 // # define LOSER1 "./images/loser_1.png"
@@ -85,7 +98,10 @@ typedef struct s_animate
 	void	*ptr4;
 	int		width;
 	int		height;
-	char	*texture;
+	char	*texture1;
+	char	*texture2;
+	char	*texture3;
+	char	*texture4;
 }	t_animate;
 
 // struct for player movement
@@ -99,6 +115,10 @@ typedef struct s_player
 	int		height;
 	int		x;
 	int		y;
+	char	*f_texture;
+	char	*r_texture;
+	char	*l_texture;
+	char	*b_texture;
 	int		direction;
 	int		move_count;
 }	t_player;
@@ -133,6 +153,8 @@ typedef struct s_data
 	t_animate	money_enemy;
 	t_animate	win_portal;
 	t_sprite	portal;
+	t_sprite	swall;
+	t_sprite	shappiness;
 	t_animate	happiness;
 	t_sprite	game_over;
 	t_map		map;
