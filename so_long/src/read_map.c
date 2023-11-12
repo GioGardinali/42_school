@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 15:13:54 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:55:03 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static void	allocate_content_map(t_data *game)
 	fd = open(game->map.file, O_RDWR);
 	while (y < game->map.rows)
 	{
-		game->map.grid_matrix[y] = ft_get_next_line;
+		game->map.grid_matrix[y] = ft_get_next_line(fd);
 		y++;
 	}
 	close (fd);
