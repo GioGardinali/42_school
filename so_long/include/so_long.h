@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 16:03:58 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:19:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,23 @@
 # define WALL_3 "./images/wall_3.png"
 # define WALL_4 "./images/wall_4.png"
 
-/*Sprites - player_loser*/
-// # define LOSER1 "./images/loser_1.png"
-// # define LOSER2 "./images/loser_2.png"
-// # define LOSER3 "./images/loser_3.png"
-
 /*Sprites - exit_win*/
 # define WIN_PORTAL1 "./images/exit_1.png"
 # define WIN_PORTAL2 "./images/exit_2.png"
 # define WIN_PORTAL3 "./images/exit_3.png"
 # define WIN_PORTAL4 "./images/exit_4.png"
 
-/*Sprites - exit_loser*/
-# define EXIT_LOSER1 "./images/exit_1.png"
-# define EXIT_LOSER2 "./images/exit_2.png"
-# define EXIT_LOSER3 "./images/exit_1.png"
-# define EXIT_LOSER4 "./images/exit_2.png"
+/*Sprites - exit_visible*/
+# define PORTAL1 "./images/exit_1.png"
+# define PORTAL2 "./images/exit_2.png"
+# define PORTAL3 "./images/exit_1.png"
+# define PORTAL4 "./images/exit_2.png"
+
+/*Sprites - player_loser*/
+# define LOSER_GREEDY1 "./images/loser_1.png"
+# define LOSER_GREEDY2 "./images/loser_2.png"
+# define LOSER_GREEDY3 "./images/loser_3.png"
+# define LOSER_GREEDY4 "./images/loser_4.png"
 
 // struct for map
 typedef struct s_map
@@ -163,14 +164,13 @@ typedef struct s_data
 	t_animate	money_enemy;
 	t_animate	win_portal;
 	t_animate	portal;
-	t_animate	loser_portal;
 	t_sprite	swall;
 	t_sprite	shappiness;
 	t_animate	happiness;
 	t_sprite	game_over;
 	t_map		map;
 	t_win		win;
-	// t_animate	loser_greedy;
+	t_animate	loser_greedy;
 	// t_sprite	you_win;
 }	t_data;
 

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:33:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 16:09:27 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:20:19 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ int32_t create_texture_from_png_pt_two(t_data *game)
 	game->money_enemy.texture2 = mlx_load_png(ENEMY_2);
 	game->money_enemy.texture3 = mlx_load_png(ENEMY_3);
 	game->money_enemy.texture4 = mlx_load_png(ENEMY_4);
-	game->portal.texture1 = mlx_load_png(EXIT_LOSER1);
-	game->portal.texture2 = mlx_load_png(EXIT_LOSER2);
-	game->portal.texture3 = mlx_load_png(EXIT_LOSER3);
-	game->portal.texture4 = mlx_load_png(EXIT_LOSER4);
+	game->portal.texture1 = mlx_load_png(PORTAL1);
+	game->portal.texture2 = mlx_load_png(PORTAL2);
+	game->portal.texture3 = mlx_load_png(PORTAL3);
+	game->portal.texture4 = mlx_load_png(PORTAL4);
 	if (!game->happiness.texture1 || !game->happiness.texture2
 		|| !game->happiness.texture3 || !game->happiness.texture4
 		|| !game->money_enemy.texture1 || !game->money_enemy.texture2
