@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 12:34:21 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:03:58 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@
 # ifndef IMAGE_WIDTH
 #  define IMAGE_WIDTH 64
 # endif
+
 # ifndef IMAGE_HEIGHT
 #  define IMAGE_HEIGHT 64
 # endif
+
+# define TRUE 1
+# define FALSE 0
 
 /*Sprites - brackground*/
 # define GROUND_1 "./images/ground_1.png"
@@ -36,10 +40,10 @@
 # define GROUND_4 "./images/ground_4.png"
 
 /*Sprites - collectible*/
-# define COLLECT1 "./images/collect_1.png"
-# define COLLECT2 "./images/collect_2.png"
-# define COLLECT3 "./images/collect_3.png"
-# define COLLECT4 "./images/collect_4.png"
+# define COLLECT_1 "./images/collect_1.png"
+# define COLLECT_2 "./images/collect_2.png"
+# define COLLECT_3 "./images/collect_3.png"
+# define COLLECT_4 "./images/collect_4.png"
 
 /*Sprites - player*/
 # define PLAYER_UP "./images/player_up.png"
@@ -65,10 +69,16 @@
 // # define LOSER3 "./images/loser_3.png"
 
 /*Sprites - exit_win*/
-// # define WIN_PORTAL1 "./images/win_portal1.png"
-// # define WIN_PORTAL2 "./images/win_portal2.png"
-// # define WIN_PORTAL3 "./images/win_portal3.png"
-// # define WIN_PORTAL4 "./images/win_portal4.png"
+# define WIN_PORTAL1 "./images/exit_1.png"
+# define WIN_PORTAL2 "./images/exit_2.png"
+# define WIN_PORTAL3 "./images/exit_3.png"
+# define WIN_PORTAL4 "./images/exit_4.png"
+
+/*Sprites - exit_loser*/
+# define EXIT_LOSER1 "./images/exit_1.png"
+# define EXIT_LOSER2 "./images/exit_2.png"
+# define EXIT_LOSER3 "./images/exit_1.png"
+# define EXIT_LOSER4 "./images/exit_2.png"
 
 // struct for map
 typedef struct s_map
@@ -152,7 +162,8 @@ typedef struct s_data
 	t_animate	wall;
 	t_animate	money_enemy;
 	t_animate	win_portal;
-	t_sprite	portal;
+	t_animate	portal;
+	t_animate	loser_portal;
 	t_sprite	swall;
 	t_sprite	shappiness;
 	t_animate	happiness;
