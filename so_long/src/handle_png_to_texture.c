@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle.image.c                                     :+:      :+:    :+:   */
+/*   handle_png_to_texture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:33:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/14 11:20:14 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:53:51 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	create_new_player_image(t_data *game, char *path)
 	mlx_delete_image(game->mlx42_connection, game->human.f_texture);
 }
 
-int32_t	create_texture_from_png_pt_one(t_data *game)
+int32_t	create_texture_from_png_one(t_data *game)
 {
 	game->human.f_texture = mlx_load_png(PLAYER_UP);
 	game->human.l_texture = mlx_load_png(PLAYER_L);
@@ -42,7 +42,7 @@ int32_t	create_texture_from_png_pt_one(t_data *game)
 	return (TRUE);
 }
 
-int32_t	create_texture_from_png_pt_two(t_data *game)
+int32_t	create_texture_from_png_two(t_data *game)
 {
 	game->happiness.texture1 = mlx_load_png(COLLECT_1);
 	game->happiness.texture2 = mlx_load_png(COLLECT_2);
@@ -62,6 +62,27 @@ int32_t	create_texture_from_png_pt_two(t_data *game)
 		|| !game->money_enemy.texture3 || !game->money_enemy.texture4
 		|| !game->portal.texture1 || !game->portal.texture2
 		|| !game->portal.texture3 || !game->portal.texture4)
+		return (FALSE);
+	return (TRUE);
+}
+
+int32_t	create_texture_from_png_three(t_data *game)
+{
+	game->game_over.texture = mlx_load_png(GAME_OVER);
+	game->you_win.texture = mlx_load_png(GAME_WIN);
+	game->loser_greedy.texture1 = mlx_load_png(LOSER_GREEDY1);
+	game->loser_greedy.texture2 = mlx_load_png(LOSER_GREEDY2);
+	game->loser_greedy.texture3 = mlx_load_png(LOSER_GREEDY3);
+	game->loser_greedy.texture4 = mlx_load_png(LOSER_GREEDY4);
+	game->win_portal.texture1 = mlx_load_png(WIN_PORTAL1);
+	game->win_portal.texture2 = mlx_load_png(WIN_PORTAL2);
+	game->win_portal.texture3 = mlx_load_png(WIN_PORTAL3);
+	game->win_portal.texture4 = mlx_load_png(WIN_PORTAL4);
+	if (!game->game_over.texture || !game->you_win.texture
+		|| !game->loser_greedy.texture1 || !game->loser_greedy.texture2
+		|| !game->loser_greedy.texture3 || !game->loser_greedy.texture4
+		|| !game->win_portal.texture1 || !game->win_portal.texture2
+		|| !game->win_portal.texture3 || !game->win_portal.texture4)
 		return (FALSE);
 	return (TRUE);
 }

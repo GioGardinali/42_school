@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 16:19:32 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:14:56 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@
 # define LOSER_GREEDY3 "./images/loser_3.png"
 # define LOSER_GREEDY4 "./images/loser_4.png"
 
+/*Sprites - game_over*/
+# define GAME_OVER "./images/game_over.png"
+
+/*Sprites - game_win*/
+# define GAME_WIN "./images/game_win.png"
+
 // struct for map
 typedef struct s_map
 {
@@ -103,10 +109,10 @@ typedef struct s_direction
 // struct for animate images
 typedef struct s_animate
 {
-	void	*ptr1;
-	void	*ptr2;
-	void	*ptr3;
-	void	*ptr4;
+	void	*img1;
+	void	*img2;
+	void	*img3;
+	void	*img4;
 	int		width;
 	int		height;
 	char	*texture1;
@@ -118,10 +124,10 @@ typedef struct s_animate
 // struct for player movement
 typedef struct s_player
 {
-	void	*f_ptr;
-	void	*r_ptr;
-	void	*l_ptr;
-	void	*b_ptr;
+	void	*f_img;
+	void	*r_img;
+	void	*l_img;
+	void	*b_img;
 	int		width;
 	int		height;
 	int		x;
@@ -137,7 +143,7 @@ typedef struct s_player
 // struct for configuration images
 typedef struct s_sprite
 {
-	void	*ptr;
+	void	*img;
 	char	*path;
 	int		width;
 	int		height;
@@ -156,7 +162,7 @@ typedef struct s_win
 // struct for all datas
 typedef struct s_data
 {
-	void		*mlx42_connection;
+	void		*mlx;
 	int			config_stage;
 	t_player	human;
 	t_animate	ground;
@@ -169,9 +175,10 @@ typedef struct s_data
 	t_animate	happiness;
 	t_sprite	game_over;
 	t_map		map;
-	t_win		win;
+	t_win		windows;
 	t_animate	loser_greedy;
-	// t_sprite	you_win;
+	t_sprite	you_win;
+	mlx_image_t	teste;
 }	t_data;
 
 void		read_map(int argc, t_data *game);
