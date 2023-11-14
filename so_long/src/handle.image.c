@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:33:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 16:20:19 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:20:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	create_new_player_image(t_data *game, char *path)
 {
-	mlx_delete_texture(game->human.texture);
-	mlx_delete_image(game->mlx42_connection, game->human. );
+	mlx_delete_texture(game->human.f_texture);
+	mlx_delete_image(game->mlx42_connection, game->human.f_texture);
 }
 
-int32_t create_texture_from_png_pt_one(t_data *game)
+int32_t	create_texture_from_png_pt_one(t_data *game)
 {
 	game->human.f_texture = mlx_load_png(PLAYER_UP);
 	game->human.l_texture = mlx_load_png(PLAYER_L);
@@ -42,7 +42,7 @@ int32_t create_texture_from_png_pt_one(t_data *game)
 	return (TRUE);
 }
 
-int32_t create_texture_from_png_pt_two(t_data *game)
+int32_t	create_texture_from_png_pt_two(t_data *game)
 {
 	game->happiness.texture1 = mlx_load_png(COLLECT_1);
 	game->happiness.texture2 = mlx_load_png(COLLECT_2);
