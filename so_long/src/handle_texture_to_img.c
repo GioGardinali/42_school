@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:33:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/14 17:35:12 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/14 20:44:10 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	create_img_from_texture_three(t_data *game)
 			game->loser_greedy.texture4);
 }
 
-void	create_img_from_texture(t_data *game)
+void	resize_of_image_one(t_data *game)
 {
 	int	width;
 	int	height;
@@ -83,4 +83,46 @@ void	create_img_from_texture(t_data *game)
 	width = IMAGE_WIDTH;
 	height = IMAGE_HEIGHT;
 	mlx_resize_image(game->human.f_img, width, height);
+	mlx_resize_image(game->human.l_img, width, height);
+	mlx_resize_image(game->human.r_img, width, height);
+	mlx_resize_image(game->human.b_img, width, height);
+	mlx_resize_image(game->wall.img1, width, height);
+	mlx_resize_image(game->wall.img2, width, height);
+	mlx_resize_image(game->wall.img3, width, height);
+	mlx_resize_image(game->wall.img4, width, height);
+	mlx_resize_image(game->ground.img1, width, height);
+	mlx_resize_image(game->ground.img2, width, height);
+	mlx_resize_image(game->ground.img3, width, height);
+	mlx_resize_image(game->ground.img4, width, height);
+	mlx_resize_image(game->happiness.img1, width, height);
+	mlx_resize_image(game->happiness.img2, width, height);
+	mlx_resize_image(game->happiness.img3, width, height);
+	mlx_resize_image(game->happiness.img4, width, height);
+	mlx_resize_image(game->money_enemy.img1, width, height);
+	mlx_resize_image(game->money_enemy.img2, width, height);
+	mlx_resize_image(game->money_enemy.img3, width, height);
+	mlx_resize_image(game->money_enemy.img4, width, height);
+}
+
+void	resize_of_image_two(t_data *game)
+{
+	int	width;
+	int	height;
+
+	width = IMAGE_WIDTH;
+	height = IMAGE_HEIGHT;
+	mlx_resize_image(game->win_portal.img1, width, height);
+	mlx_resize_image(game->win_portal.img2, width, height);
+	mlx_resize_image(game->win_portal.img3, width, height);
+	mlx_resize_image(game->win_portal.img4, width, height);
+	mlx_resize_image(game->portal.img1, width, height);
+	mlx_resize_image(game->portal.img2, width, height);
+	mlx_resize_image(game->portal.img3, width, height);
+	mlx_resize_image(game->portal.img4, width, height);
+	mlx_resize_image(game->game_over.img, width, height);
+	mlx_resize_image(game->you_win.img, width, height);
+	mlx_resize_image(game->loser_greedy.img1, width, height);
+	mlx_resize_image(game->loser_greedy.img2, width, height);
+	mlx_resize_image(game->loser_greedy.img3, width, height);
+	mlx_resize_image(game->loser_greedy.img4, width, height);
 }
