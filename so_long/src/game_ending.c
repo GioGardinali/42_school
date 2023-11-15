@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:04:31 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 13:54:45 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:00:52 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ int	end_game(t_data *game)
 {
 	if (game->win.mlx_win)
 		close_window(game);
+	free_images_one(game);
+	ree_images_two(game);
+	free_textures_one(game);
+	free_textures_two(game);
+	mlx_terminate(game->mlx);
 	free_map(&game->map);
-	free_sprites_background(game); // criar
-	free_sprites_collectible_and_player(game); // criar
-	free_sprites_ending_and_enemy(game); // criar
-	end_mlx42_connect(game); // criar
 	if (game->config_stage < 4)
 		exit (EXIT_SUCCESS);
 }
