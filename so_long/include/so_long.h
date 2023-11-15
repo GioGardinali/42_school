@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/14 17:14:56 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:22:31 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ typedef struct s_win
 // struct for all datas
 typedef struct s_data
 {
-	void		*mlx;
+	mlx_t		*mlx;
 	int			config_stage;
 	t_player	human;
 	t_animate	ground;
