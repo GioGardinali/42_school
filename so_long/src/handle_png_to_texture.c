@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:33:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/14 16:53:51 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:11:05 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,26 @@
 int	create_new_player_image(t_data *game, char *path)
 {
 	mlx_delete_texture(game->human.f_texture);
-	mlx_delete_image(game->mlx42_connection, game->human.f_texture);
+	mlx_delete_texture(game->human.l_texture);
+	mlx_delete_texture(game->human.r_texture);
+	mlx_delete_texture(game->human.b_texture);
+	mlx_delete_image(game->mlx, game->human.f_img);
+	mlx_delete_image(game->mlx, game->human.l_img);
+	mlx_delete_image(game->mlx, game->human.r_img);
+	mlx_delete_image(game->mlx, game->human.b_img);
+	game->human.f_texture = mlx_load_png(PLAYER_UP);
+	game->human.l_texture = mlx_load_png(PLAYER_L);
+	game->human.r_texture = mlx_load_png(PLAYER_R);
+	game->human.b_texture = mlx_load_png(PLAYER_D);
+	game->human.f_img = mlx_texture_to_image(game->mlx, game->human.f_texture);
+	game->human.l_img = mlx_texture_to_image(game->mlx, game->human.l_texture);
+	game->human.r_img = mlx_texture_to_image(game->mlx, game->human.r_texture);
+	game->human.b_img = mlx_texture_to_image(game->mlx, game->human.b_texture);
+	mlx_resize_image(game->human.f_img, IMAGE_WIDTH, IMAGE_HEIGHT);
+	mlx_resize_image(game->human.l_img, IMAGE_WIDTH, IMAGE_HEIGHT);
+	mlx_resize_image(game->human.r_img, IMAGE_WIDTH, IMAGE_HEIGHT);
+	mlx_resize_image(game->human.b_img, IMAGE_WIDTH, IMAGE_HEIGHT);
+	return (TRUE);
 }
 
 int32_t	create_texture_from_png_one(t_data *game)

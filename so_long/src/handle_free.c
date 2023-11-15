@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:59:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 16:53:15 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:48:43 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_map(t_map *map)
 	free(map->grid_matrix);
 }
 
-static	void	free_images_one(t_data *game)
+static void	free_images_one(t_data *game)
 {
 	mlx_delete_image(game->mlx, game->human.f_img);
 	mlx_delete_image(game->mlx, game->human.l_img);
@@ -49,7 +49,7 @@ static	void	free_images_one(t_data *game)
 	mlx_delete_image(game->mlx, game->money_enemy.img4);
 }
 
-static	void	free_images_two(t_data *game)
+static void	free_images_two(t_data *game)
 {
 	mlx_delete_image(game->mlx, game->win_portal.img1);
 	mlx_delete_image(game->mlx, game->win_portal.img2);

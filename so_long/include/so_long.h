@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 16:22:31 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:14:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 /*Macros*/
 # ifndef TILE_SIZE
 #  define TILE_SIZE 64
+# endif
+
+# ifndef REPEAT_FRAME
+#  define REPEAT_FRAME 90
 # endif
 
 # ifndef IMAGE_WIDTH
@@ -115,6 +119,8 @@ typedef struct s_animate
 	void	*img4;
 	int		width;
 	int		height;
+	int		x;
+	int		y;
 	char	*texture1;
 	char	*texture2;
 	char	*texture3;
@@ -182,22 +188,39 @@ typedef struct s_data
 }	t_data;
 
 void		read_map(int argc, t_data *game);
+static void	check_file_map(int argc, t_data *game);
 static void	size_map(t_data *game);
 static void	allocate_content_map(t_data *game);
 
 void		validate_content_map( t_data *game);
-static void	check_count_content(t_data *game);
 static void	parse_map(t_data *game);
+static void	check_count_content(t_data *game);
 static void	check_wall(t_data *game);
 
 void		check_valid_path(t_data *game);
 static void	allocate_flag_grid(t_data *game, t_map *seen_flag);
 static void	start_position_player(t_data *game, t_map *seen_flag);
 void		check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag);
+static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag);
 
-void		initiate_game(t_data *game);
+int			create_new_player_image(t_data *game, char *path);
+int32_t		create_texture_from_png_one(t_data *game);
+int32_t		create_texture_from_png_two(t_data *game);
+int32_t		create_texture_from_png_three(t_data *game);
+
+void		create_img_from_texture_one(t_data *game);
+void		create_img_from_texture_two(t_data *game);
+void		create_img_from_texture_three(t_data *game);
+void		resize_of_image_one(t_data *game);
+void		resize_of_image_two(t_data *game);
+
+void		free_map(t_map *map);
+static void	free_images_one(t_data *game);
+static void	free_images_two(t_data *game);
+static void	free_textures_one(t_data *game);
+static void	free_textures_two(t_data *game);
 
 void		handle_error(int error_type, char *error_msg, t_data *game);
-void		free_map(t_map *map);
+int			end_game(t_data *game);
 
 #endif

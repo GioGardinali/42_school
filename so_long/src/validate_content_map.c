@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:41:57 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/08 17:07:12 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:23:50 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	parse_map(t_data *game)
 	y = 0;
 	while (x < game->map.columns)
 	{
-		if (ft_strchr("01CEPH", game->map.grid_matrix[y][x]) == NULL)
+		if (ft_strchr("01CEPM", game->map.grid_matrix[y][x]) == NULL)
 			handle_error(0, "Map with invalid compoment!\n", game);
 		else if (game->map.grid_matrix[y][x] == 'P')
 			game->map.player_count++;
@@ -82,6 +82,6 @@ void	validate_content_map( t_data *game)
 	game->map.collect_count = 0;
 	game->map.exit_count = 0;
 	parse_map(game);
-	check_cotent_count(game);
+	check_count_content(game);
 	check_wall(game);
 }

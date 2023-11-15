@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 11:25:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:43:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	check_valid_path(t_data *game)
 	seen_flag.valid_path = 0;
 	seen_flag.collect_count = 0;
 	allocate_flag_grid(game, &seen_flag);
-	start_position(game, &seen_flag);
-	check_neighbors(game, game->human.x, game->human.y, &seen_flag);
+	start_position_player(game, &seen_flag);
+	check_sides(game, game->human.x, game->human.y, &seen_flag);
 	if (seen_flag.valid_path == 0)
 	{
 		free_map(&seen_flag);
