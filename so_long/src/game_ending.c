@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:04:31 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 17:03:11 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:30:59 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	end_game(t_data *game)
 {
-	if (game->window.mlx_win)
+	if (game->windows.mlx_win)
 		close_window(game);
 	free_images_one(game);
 	ree_images_two(game);

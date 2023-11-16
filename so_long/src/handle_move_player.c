@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:21:29 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 20:10:27 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 22:18:40 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static void	handle_next_moviment(t_data *game, t_player *human, int x, int y)
+static void	handle_next_movement(t_data *game, t_player *human, int x, int y)
 {
 	human->move_count++;
 	game->map.grid_matrix[human->y][human->x] = '0';
