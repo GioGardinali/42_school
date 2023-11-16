@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 23:46:37 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:40:44 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,31 @@ void		create_img_from_texture_two(t_data *game);
 void		create_img_from_texture_three(t_data *game);
 void		resize_of_image_one(t_data *game);
 void		resize_of_image_two(t_data *game);
+
+static void	handle_next_movement(t_data *game, t_player *human, int x, int y);
+void		move_up(t_data *game, t_player *human);
+void		move_down(t_data *game, t_player *human);
+void		move_left(t_data *game, t_player *human);
+void		move_right(t_data *game, t_player *human);
+
+void		hook_move_player(mlx_key_data_t keydata,
+				t_data *game, t_player *human);
+void		hook_close_window(void *key);
+void		render_map_game(t_data *game, int x, int y);
+int			render_hook_map(t_data *game);
+
+void		render_exit(t_data *game, int x, int y);
+void		render_ground(t_data *game, int x, int y);
+void		render_wall(t_data *game, int x, int y);
+void		render_collectable(t_data *game, int x, int y);
+void		render_human(t_data *game, int x, int y);
+void		render_money_enemy(t_data *game, int x, int y);
+void		render_exit_win(t_data *game, int x, int y);
+void		render_loser_greedy(t_data *game, int x, int y);
+void		render_you_win(t_data *game, int x, int y);
+void		render_game_over(t_data *game, int x, int y);
+
+void		display_count_on_screen(t_data *game);
 
 void		free_map(t_map *map);
 static void	free_images_one(t_data *game);

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:17:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 22:54:12 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:40:13 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,42 @@ void	hook_move_player(mlx_key_data_t keydata, t_data *game, t_player *human)
 		&& keydata.action == MLX_PRESS
 		&& game->map.grid_matrix[human->y][human->x + 1] != '1')
 		move_right(game, &game->human);
+}
+
+void	render_map_game(t_data *game, int x, int y)
+{
+	if (game->map.grid_matrix[y][x] == '0')
+		render_ground(game, x, y);
+	if (game->map.grid_matrix[y][x] == '1')
+		render_wall(game, x, y);
+	if (game->map.grid_matrix[y][x] == 'C')
+		render_collectable(game, x, y);
+	if (game->map.grid_matrix[y][x] == 'E')
+		render_exit(game, x, y);
+	if (game->map.grid_matrix[y][x] == 'P')
+		render_human(game, x, y);
+	if (game->map.grid_matrix[y][x] == 'M')
+		render_money_enemy(game, x, y);
+	display_count__on_screen(game);
+}
+
+int	render_hook_map(t_data *game)
+{
+	int	x;
+	int	y;
+
+	if (game->mlx->window == NULL)
+		return (FALSE);
+	y = 0;
+	while (y < game->map.rows)
+	{
+		x = 0;
+		while (x < game->map.columns)
+		{
+			render_map_game(game, x, y);
+			x++;
+		}
+		y++;
+	}
+	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:21:29 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 23:35:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:49:17 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ static void	handle_next_movement(t_data *game, t_player *human, int x, int y)
 		game->map.grid_matrix[game->portal.y][game->portal.x] = 'E';
 	if (game->map.grid_matrix[y][x] == 'E')
 	{
-		render_you_win_ending(game, x, y);
+		render_exit_win(game, x, y);
+		render_you_win(game, x, y);
 		end_game(game);
 	}
 	if (game->map.grid_matrix[y][x] == 'M')
 	{
-		render_you_loser_ending(game, x, y);
+		render_loser_greedy(game, x, y);
+		render_game_over(game, x, y);
 		end_game(game);
 	}
 	game->map.grid_matrix[y][x] = 'P';
