@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:17:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/16 14:40:13 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:54:41 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	render_hook_map(t_data *game)
 	int	x;
 	int	y;
 
-	if (game->mlx->window == NULL)
+	if (game->mlx == NULL)
 		return (FALSE);
 	y = 0;
 	while (y < game->map.rows)

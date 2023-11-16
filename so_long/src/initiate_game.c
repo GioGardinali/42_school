@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:05:30 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 19:07:11 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:01:40 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ static void	init_window(t_data *game)
 	int	screen_width;
 	int	screen_height;
 
-	game->win.mlx_win = NULL;
-	mlx_get_screen_size(game->mlx_connection, &screen_width, &screen_height);
-	game->win.width = game->map.columns * TILE_SIZE;
-	game->win.height = game->map.rows * TILE_SIZE;
-	if (game->win.width > screen_width || game->win.height > screen_height)
+	game->mlx = NULL;
+	mlx_get_monitor_size(0, &screen_width, &screen_height);
+	//mlx_get_screen_size(game->mlx_connection, &screen_width, &screen_height);
+	game->windows_width = game->map.columns * TILE_SIZE;
+	game->windows_height = game->map.rows * TILE_SIZE;
+	if (game->windows_width > screen_width || game->windows_height > screen_height)
 		handle_error(0, "Map is too big for this screen!\n", game);
 	game->win.mlx_win = mlx_new_window(game->mlx_connection,
 			game->win.width, game->win.height, "SO LONG");
@@ -60,33 +61,51 @@ static void	init_window(t_data *game)
 
 void	initiate_game(t_data *game)
 {
-	game->mlx_connection = mlx_init();
-	if (game->mlx_connection == NULL)
+	game->mlx = mlx_init(game->map.columns, game->map.rows, "So_long", true);
+	if (game->mlx == NULL)
 		handle_error(0, "mlx_init failed!\n", game);
 	game->config_stage = 3;
-	init_sprites_background(game);
-	init_sprites_collectible_and_player(game);
-	init_sprites_ending_and_enemy(game);
-	if (game->space.ptr1 == NULL || game->space.ptr2 == NULL
-		|| game->space.ptr3 == NULL || game->space.ptr4 == NULL
-		|| game->asteroid.ptr == NULL || game->portal.ptr == NULL
-		|| game->move_display.ptr == NULL || game->star_display.ptr == NULL
-		|| game->star.ptr1 == NULL || game->star.ptr2 == NULL
-		|| game->star.ptr3 == NULL || game->star.ptr4 == NULL
-		|| game->astronaut.u_ptr == NULL || game->astronaut.d_ptr == NULL
-		|| game->astronaut.r_ptr == NULL || game->astronaut.l_ptr == NULL
-		|| game->you_win.ptr == NULL || game->win_portal.ptr1 == NULL
-		|| game->win_portal.ptr2 == NULL || game->win_portal.ptr3 == NULL
-		|| game->game_over.ptr == NULL || game->hole.ptr1 == NULL
-		|| game->hole.ptr2 == NULL || game-> hole.ptr3 == NULL
-		|| game->lose_hole.ptr1 == NULL || game->lose_hole.ptr2 == NULL
-		|| game->lose_hole.ptr3 == NULL)
-		handle_error(0, "XPM image loading failed!\n", game);
+	call_images(game);
+	check_images(game);
 	init_window(game);
 	game->config_stage = 4;
-	game->map.grid[game->portal.y][game->portal.x] = '0';
+	game->map.grid_matrix[game->portal.y][game->portal.x] = '0';
 }
 
+void	call_images(t_data *game)
+{
+	create_new_player_image(game);
+	create_texture_from_png_one(game);
+	create_texture_from_png_two(game);
+	create_texture_from_png_three(game);
+	create_img_from_texture_one(game);
+	create_img_from_texture_two(game);
+	create_img_from_texture_three(game);
+	resize_of_image_one(game);
+	resize_of_image_two(game);
+}
+
+void	check_images(t_data *game)
+{
+	if (game->human.f_img == NULL || game->human.l_img == NULL
+		|| game->human.r_img == NULL || game->human.b_img == NULL
+		|| game->wall.img1 == NULL || game->wall.img2 == NULL
+		|| game->wall.img3 == NULL || game->wall.img4 == NULL
+		|| game->ground.img1 == NULL || game->ground.img2 == NULL
+		|| game->ground.img3 == NULL || game->ground.img4 == NULL
+		|| game->happiness.img1 == NULL || game->happiness.img2 == NULL
+		|| game->happiness.img3 == NULL || game->happiness.img4 == NULL
+		|| game->money_enemy.img1 == NULL || game->money_enemy.img2 == NULL
+		|| game->money_enemy.img3 == NULL || game->money_enemy.img4 == NULL
+		|| game->win_portal.img1 == NULL || game->win_portal.img2 == NULL
+		|| game->win_portal.img3 == NULL || game->win_portal.img4 == NULL
+		|| game->portal.img1 == NULL || game->portal.img2 == NULL
+		|| game->portal.img3 == NULL || game->portal.img4 == NULL
+		|| game->loser_greedy.img1 == NULL || game->loser_greedy.img2 == NULL
+		|| game->loser_greedy.img3 == NULL || game->loser_greedy.img4 == NULL
+		|| game->game_over.img == NULL || game->you_win.img == NULL)
+		handle_error(0, "Image loading failed!\n", game);
+}
 
 static	int	map_to_window(t_window *window, t_game *game, char *str)
 {

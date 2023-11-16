@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/16 14:40:44 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:23:38 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,7 @@ static void	start_position_player(t_data *game, t_map *seen_flag);
 void		check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag);
 static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag);
 
-int			create_new_player_image(t_data *game, char *path);
+int			create_new_player_image(t_data *game);
 int32_t		create_texture_from_png_one(t_data *game);
 int32_t		create_texture_from_png_two(t_data *game);
 int32_t		create_texture_from_png_three(t_data *game);

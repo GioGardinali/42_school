@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:33:21 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 17:11:05 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:22:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	create_new_player_image(t_data *game, char *path)
+int	create_new_player_image(t_data *game)
 {
 	mlx_delete_texture(game->human.f_texture);
 	mlx_delete_texture(game->human.l_texture);
