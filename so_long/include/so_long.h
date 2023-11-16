@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/16 15:23:38 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:09:50 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,6 +240,6 @@ static void	free_textures_one(t_data *game);
 static void	free_textures_two(t_data *game);
 
 void		handle_error(int error_type, char *error_msg, t_data *game);
-int			end_game(t_data *game);
+int			free_and_end_game(t_data *game);
 
 #endif
