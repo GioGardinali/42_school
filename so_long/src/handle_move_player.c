@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:21:29 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 22:18:40 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/15 23:35:08 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	move_left(t_data *game, t_player *human)
 	int	x;
 	int	y;
 
-	human->direction = 'b';
+	human->direction = 'l';
 	x = human->x - 1;
 	y = human->y;
 	if (game->map.grid_matrix[y][x] != '1')
@@ -83,7 +83,7 @@ void	move_right(t_data *game, t_player *human)
 	int	x;
 	int	y;
 
-	human->direction = 'b';
+	human->direction = 'r';
 	x = human->x + 1;
 	y = human->y;
 	if (game->map.grid_matrix[y][x] != '1')
