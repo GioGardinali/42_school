@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/17 02:09:27 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:23:09 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,21 +131,42 @@ typedef struct s_animate
 // struct for player movement
 typedef struct s_player
 {
-	void	*f_img;
-	void	*r_img;
-	void	*l_img;
-	void	*b_img;
-	int		width;
-	int		height;
-	int		x;
-	int		y;
-	char	*f_texture;
-	char	*r_texture;
-	char	*l_texture;
-	char	*b_texture;
-	int		direction;
-	int		move_count;
+	mlx_texture_t	texture;
+	mlx_image_t		image;
+	void			*f_img;
+	void			*r_img;
+	void			*l_img;
+	void			*b_img;
+	int				width;
+	int				height;
+	int				x;
+	int				y;
+	char			*f_texture;
+	char			*r_texture;
+	char			*l_texture;
+	char			*b_texture;
+	int				direction;
+	int				move_count;
 }	t_player;
+
+// struct new
+// struct					s_sprite
+// {
+// 	mlx_texture_t	*bg;
+// 	mlx_image_t		*bg_1;
+// 	mlx_texture_t	*human;
+// 	mlx_image_t		*human_1;
+// 	mlx_texture_t	*coin;
+// 	mlx_image_t		*collectible_1;
+// 	mlx_texture_t	*wall;
+// 	mlx_image_t		*wall_1;
+// 	mlx_texture_t	*portal;
+// 	mlx_image_t		*portal_1;
+// 	mlx_texture_t	*logo;
+// 	mlx_image_t		*logo_1;
+// 	mlx_texture_t	*enemy;
+// 	mlx_image_t		*enemy_1;
+// } t_sprite;
 
 // struct for configuration images
 typedef struct s_sprite
@@ -162,24 +183,41 @@ typedef struct s_sprite
 // struct for all datas
 typedef struct s_data
 {
-	mlx_t		*mlx;
-	int			windows_width;
-	int			windows_height;
-	int			config_stage;
-	t_player	human;
-	t_animate	ground;
-	t_animate	wall;
-	t_animate	money_enemy;
-	t_animate	win_portal;
-	t_animate	portal;
-	t_sprite	swall;
-	t_sprite	shappiness;
-	t_animate	happiness;
-	t_sprite	game_over;
-	t_map		map;
-	t_animate	loser_greedy;
-	t_sprite	you_win;
-	mlx_image_t	teste;
+	mlx_t			*mlx;
+	int				windows_width;
+	int				windows_height;
+	int				config_stage;
+	mlx_texture_t	*ground;
+	mlx_image_t		*ground_1;
+	mlx_texture_t	*wall;
+	mlx_image_t		*wall_1;
+	mlx_texture_t	*money_enemy;
+	mlx_image_t		*money_enemy_1;
+	mlx_texture_t	*win_portal;
+	mlx_image_t		*win_portal_1;
+	mlx_texture_t	*portal;
+	mlx_image_t		*portal_1;
+	mlx_texture_t	*happiness;
+	mlx_image_t		*happiness_1;
+	mlx_texture_t	*game_over;
+	mlx_image_t		*game_over_1;
+	mlx_texture_t	*loser_greedy;
+	mlx_image_t		*loser_greedy_1;
+	mlx_texture_t	*you_win;
+	mlx_image_t		*you_win_1;
+	mlx_texture_t	*human;
+	mlx_image_t		*human_1;	
+	// t_player		human;
+	// t_animate		ground;
+	// t_animate		wall;
+	// t_animate		money_enemy;
+	// t_animate		win_portal;
+	// t_animate		portal;
+	// t_animate		happiness;
+	// t_sprite		game_over;
+	t_map			map;
+	// t_animate		loser_greedy;
+	// t_sprite		you_win;
 }	t_data;
 
 void		read_map(int argc, t_data *game);

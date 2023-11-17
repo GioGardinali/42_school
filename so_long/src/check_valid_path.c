@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/17 00:00:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:46:45 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 			if (game->map.grid_matrix[y][x] == 'C')
 				seen_flag->collect_count++;
 			if (check_valid_tile(game, x, y, seen_flag) == 1)
-				check_neighbors(game, x, y, seen_flag);
+				check_sides(game, x, y, seen_flag);
 		}
 		i++;
 	}
@@ -111,12 +111,12 @@ void	check_valid_path(t_data *game)
 	if (seen_flag.valid_path == 0)
 	{
 		free_map(&seen_flag);
-		handle_error("%s", "Invalid path to exit!!", game);
+		handle_error(0, "Invalid path to exit!!", game);
 	}
 	if (seen_flag.collect_count < game->map.collect_count)
 	{
 		free_map(&seen_flag);
-		handle_error("%s", "Invalid path to collectibles!!", game);
+		handle_error(0, "Invalid path to collectibles!!", game);
 	}
 	free_map(&seen_flag);
 }
