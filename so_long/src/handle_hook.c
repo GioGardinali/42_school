@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:17:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/16 14:54:41 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 02:10:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ void	hook_close_window(void *key)
 	}
 }
 
-void	hook_move_player(mlx_key_data_t keydata, t_data *game, t_player *human)
+void	hook_move_player(mlx_key_data_t keydata, void *parameter)
 {
+	t_data		*game;
+	t_player	*human;
+
+	game = (t_data *)parameter;
 	if (((keydata.key == MLX_KEY_W) || (keydata.key == MLX_KEY_UP))
 		&& keydata.action == MLX_PRESS
 		&& game->map.grid_matrix[human->y - 1][human->x] != '1')

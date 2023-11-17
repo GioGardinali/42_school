@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/16 17:09:50 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 02:09:27 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 # include <stdlib.h> // malloc, free, size_t, NULL
 # include <fcntl.h> // open, close
+# include <unistd.h> //write, read
 /*Macros*/
 # ifndef TILE_SIZE
 #  define TILE_SIZE 64
@@ -74,10 +75,10 @@
 # define WIN_PORTAL4 "./images/exit_4.png"
 
 /*Sprites - exit_visible*/
-# define PORTAL1 "./images/exit_1.png"
-# define PORTAL2 "./images/exit_2.png"
-# define PORTAL3 "./images/exit_1.png"
-# define PORTAL4 "./images/exit_2.png"
+# define PORTAL1 "./images/exit_p_1.png"
+# define PORTAL2 "./images/exit_p_2GAME.png"
+# define PORTAL3 "./images/exit_p_1.png"
+# define PORTAL4 "./images/exit_p_2.png"
 
 /*Sprites - player_loser*/
 # define LOSER_GREEDY1 "./images/loser_1.png"
@@ -182,20 +183,15 @@ typedef struct s_data
 }	t_data;
 
 void		read_map(int argc, t_data *game);
-static void	check_file_map(int argc, t_data *game);
-static void	size_map(t_data *game);
-static void	allocate_content_map(t_data *game);
 
 void		validate_content_map( t_data *game);
-static void	parse_map(t_data *game);
-static void	check_count_content(t_data *game);
-static void	check_wall(t_data *game);
 
 void		check_valid_path(t_data *game);
-static void	allocate_flag_grid(t_data *game, t_map *seen_flag);
-static void	start_position_player(t_data *game, t_map *seen_flag);
 void		check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag);
-static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag);
+
+void		initiate_game(t_data *game);
+void		call_images(t_data *game);
+void		check_images(t_data *game);
 
 int			create_new_player_image(t_data *game);
 int32_t		create_texture_from_png_one(t_data *game);
@@ -208,14 +204,12 @@ void		create_img_from_texture_three(t_data *game);
 void		resize_of_image_one(t_data *game);
 void		resize_of_image_two(t_data *game);
 
-static void	handle_next_movement(t_data *game, t_player *human, int x, int y);
 void		move_up(t_data *game, t_player *human);
 void		move_down(t_data *game, t_player *human);
 void		move_left(t_data *game, t_player *human);
 void		move_right(t_data *game, t_player *human);
 
-void		hook_move_player(mlx_key_data_t keydata,
-				t_data *game, t_player *human);
+void		hook_move_player(mlx_key_data_t keydata, void *parameter);
 void		hook_close_window(void *key);
 void		render_map_game(t_data *game, int x, int y);
 int			render_hook_map(t_data *game);
@@ -234,10 +228,6 @@ void		render_game_over(t_data *game, int x, int y);
 void		display_count_on_screen(t_data *game);
 
 void		free_map(t_map *map);
-static void	free_images_one(t_data *game);
-static void	free_images_two(t_data *game);
-static void	free_textures_one(t_data *game);
-static void	free_textures_two(t_data *game);
 
 void		handle_error(int error_type, char *error_msg, t_data *game);
 int			free_and_end_game(t_data *game);

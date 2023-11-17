@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/12 18:55:03 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 02:13:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,17 @@ static void	check_file_map(int argc, t_data *game)
 
 	if (argc < 2)
 		handle_error(0, "You need to use: ./so_long <filename.ber>\n", game);
-		//error poucos argumentos;
 	if (argc > 2)
 		handle_error(0, "You provided more arguments than necessary!\n", game);
-		//error muitos argumentos;
 	if (ft_strnstr(game->map.file, ".ber", ft_strlen(game->map.file)) == NULL)
 		handle_error(0, "Map not in .ber extension!\n", game);
-		// error de não ter extensão .ber
 	fd = open(game->map.file, O_RDWR);
 	if (fd == -1)
 		handle_error(1, "Error!\n", game);
-		//error de fd;
 	if (read(fd, buffer, 1) == 0)
 	{
 		close(fd);
 		handle_error(0, "Map file is empty!\n", game);
-		//error arquivo do mapa vazio;
 	}
 	close(fd);
 }
@@ -62,7 +57,7 @@ static void	size_map(t_data *game)
 	if (map_outline == 1)
 	{
 		close(fd);
-		//função de erro, tem que criar
+		handle_error(0, "Your Map must be rectangular!\n", game);
 	}
 	close(fd);
 }
@@ -74,11 +69,8 @@ static void	allocate_content_map(t_data *game)
 
 	y = 0;
 	game->map.grid_matrix = malloc((game->map.rows) * sizeof(char *));
-	if (game->map.rows == NULL)
-	{
-		//colocar tratativa de erro
-		ft_printf("%s", "Erro para malocar matriz");
-	}
+	if (game->map.grid_matrix == NULL)
+		handle_error(1, "Error\n", game);
 	fd = open(game->map.file, O_RDWR);
 	while (y < game->map.rows)
 	{

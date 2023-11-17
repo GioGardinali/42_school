@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/10/28 18:10:15 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/16 23:51:34 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,48 +50,44 @@ SRC		:= ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		get_next_line.c \
-		ft_printf.c \
 		ft_nbrun.c \
 		ft_nbrlen.c \
 		ft_puthex_fd.c \
 		ft_putlowhex.c \
 		ft_putuphex.c \
-
-SRC_BONUS	:=	ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
-				ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstiter.c \
-				ft_lstmap.c \
+		ft_get_next_line.c \
+		ft_printf.c \
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJS	:= $(SRC:%.c=%.o)
-
-OBJS_BONUS	:= $(SRC_BONUS:%.c=%.o)
 
 RM		:= rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $?
-	echo $?
-
-bonus: $(OBJS) $(OBJS_BONUS)
+	ar -rcs $(NAME) $(OBJS) $@
+#	ar rcs $(NAME) $?
+#	echo $?
 
 %.o: %.c
 	$(CC) -c $< -o $@
-	ar rcs $(NAME) $@
+	
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

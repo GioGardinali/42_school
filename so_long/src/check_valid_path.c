@@ -6,33 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/15 18:43:39 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 00:00:30 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-void	check_valid_path(t_data *game)
-{
-	t_map	seen_flag;
-
-	seen_flag.valid_path = 0;
-	seen_flag.collect_count = 0;
-	allocate_flag_grid(game, &seen_flag);
-	start_position_player(game, &seen_flag);
-	check_sides(game, game->human.x, game->human.y, &seen_flag);
-	if (seen_flag.valid_path == 0)
-	{
-		free_map(&seen_flag);
-		handle_error("%s", "Invalid path to exit!!", game);
-	}
-	if (seen_flag.collect_count < game->map.collect_count)
-	{
-		free_map(&seen_flag);
-		handle_error("%s", "Invalid path to collectibles!!", game);
-	}
-	free_map(&seen_flag);
-}
 
 static void	allocate_flag_grid(t_data *game, t_map *seen_flag)
 {
@@ -119,6 +97,28 @@ void	check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 		}
 		i++;
 	}
+}
+
+void	check_valid_path(t_data *game)
+{
+	t_map	seen_flag;
+
+	seen_flag.valid_path = 0;
+	seen_flag.collect_count = 0;
+	allocate_flag_grid(game, &seen_flag);
+	start_position_player(game, &seen_flag);
+	check_sides(game, game->human.x, game->human.y, &seen_flag);
+	if (seen_flag.valid_path == 0)
+	{
+		free_map(&seen_flag);
+		handle_error("%s", "Invalid path to exit!!", game);
+	}
+	if (seen_flag.collect_count < game->map.collect_count)
+	{
+		free_map(&seen_flag);
+		handle_error("%s", "Invalid path to collectibles!!", game);
+	}
+	free_map(&seen_flag);
 }
 
 // decompor a função abaixo para destrichar e escrever ela

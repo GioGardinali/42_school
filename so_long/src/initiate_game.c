@@ -6,13 +6,13 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:05:30 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/16 17:09:17 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/17 01:57:47 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static int	init_window(t_data *game)
+static void	init_window(t_data *game)
 {
 	int	screen_width;
 	int	screen_height;
@@ -28,19 +28,6 @@ static int	init_window(t_data *game)
 			"So_long", true);
 	if (game->mlx == NULL)
 		handle_error(0, "mlx_init failed!\n", game);
-}
-
-int	initiate_game(t_data *game)
-{
-	init_window(game);
-	game->config_stage = 3;
-	call_images(game);
-	check_images(game);
-	game->config_stage = 4;
-	mlx_loop_hook(game->mlx, &hook_close_window, &game);
-	mlx_key_hook(game->mlx, &hook_move_player, &game);
-	mlx_loop(game->mlx);
-	free_and_end_game(&game);
 }
 
 void	call_images(t_data *game)
@@ -76,4 +63,16 @@ void	check_images(t_data *game)
 		|| game->loser_greedy.img3 == NULL || game->loser_greedy.img4 == NULL
 		|| game->game_over.img == NULL || game->you_win.img == NULL)
 		handle_error(0, "Image loading failed!\n", game);
+}
+
+void	initiate_game(t_data *game)
+{
+	init_window(game);
+	game->config_stage = 3;
+	call_images(game);
+	check_images(game);
+	game->config_stage = 4;
+	mlx_loop_hook(game->mlx, &hook_close_window, &game);
+	mlx_key_hook(game->mlx, &hook_move_player, &game);
+	mlx_loop(game->mlx);
 }

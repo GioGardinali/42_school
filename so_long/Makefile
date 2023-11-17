@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 18:28:55 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/15 18:28:58 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/17 00:15:47 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,49 +17,55 @@
 #LMLX = -framework Cocoa -framework OpenGL -framework IOKit
 #
 
-# Make variables
-HEADER = ./inc
-CFLAGS = -Wall -Wextra -Werror -I$(HEADER)
-LEAKS = valgrind --leak-check=full --show-leak-kinds=all -s -q
-RM = rm -f
-CC = gcc -g
-AR = ar rcs
-SRCS_DIR = src
-OBJS_DIR = obj
-OBJ_GNL_DIR = obj_gnl
+#--------------------PATHS--------------------#
+
+SRC_PATH = ./src
+HEADER_PATH = ./include/
+LIBFT_PATH = ./libft/
+LIBFT = $(LIBFT_PATH)/libft.a
+MAP_PATH = ./maps/
+MLX_PATH = ./MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm
+MLX_HEADER = ./MLX42/include
+
+#--------------------FILES--------------------#
 BIN = so_long
 NAME = $(BIN)
-LIBFT_PATH = libraries/libft
-LIBFT = $(LIBFT_PATH)/libft.a
-MLX_PATH = libraries/MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm
-MLX_HEADER = libraries/MLX42/include
-
-SRCS_MAPS = "./maps/map.ber"
 
 FILES =\
 	main \
-	check_args \
-	game_init \
-	handle_input \
-	handle_image \
-	handle_error \
-	handle_map \
-	check_map \
-	handle_window \
+	initiate_game \
+	read_map \
+	validate_content_map \
+	check_valid_path \
+	handle_png_to_texture \
+	handle_texture_to_img \
+	display_count_on_screen_bonus \
+	handle_move_player \
+	handle_hook \
+	handle_render_game \
+	handle_render_game_bonus \
 	handle_free \
-	map_validate \
-	handle_collectable \
-	player_movement \
-	draw_map \
+	game_ending
 
-OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
+OBJS = $(addprefix $(OBJS_PATH)/, $(addsuffix .o, $(FILES)))
+
+#------------------VARIABLES-----------------#
+
+CFLAGS = -Wall -Wextra -Werror -I$(HEADER_PATH)
+LEAKS = valgrind --leak-check=full --show-leak-kinds=all -s -q
+RM = rm -f
+CC = gcc -g
+AR = ar -rcs
+OBJS_PATH = obj
+
+#--------------------RULES------------------#
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS) | $(BIN_DIR)
 	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_PATH) -lft $(MLX_PATH) -o $@
 
-$(OBJS_DIR)/%.o:$(SRCS_DIR)/%.c | $(OBJS_DIR)
+$(OBJS_PATH)/%.o:$(SRC_PATH)/%.c | $(OBJS_PATH)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
@@ -68,8 +74,8 @@ $(LIBFT):
 play: all
 	./so_long "./maps/map.ber"
 
-$(OBJS_DIR):
-	@mkdir -p $(OBJS_DIR)
+$(OBJS_PATH):
+	@mkdir -p $(OBJS_PATH)
 
 $(BIN_DIR):
 	@mkdir -p $(BIN_DIR)
