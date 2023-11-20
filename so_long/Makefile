@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 18:28:55 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/17 00:15:47 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/20 13:56:31 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 ##LMLX = -lmlx -framework OpenGL -framework AppKit
 #LMLX = -framework Cocoa -framework OpenGL -framework IOKit
 #
-
+#valgrind --leak-check=full --show-leak-kinds=all --suppressions=./errors.txt -s -q ./so_long maps/map1.ber;
 #--------------------PATHS--------------------#
 
 SRC_PATH = ./src
@@ -24,7 +24,7 @@ HEADER_PATH = ./include/
 LIBFT_PATH = ./libft/
 LIBFT = $(LIBFT_PATH)/libft.a
 MAP_PATH = ./maps/
-MLX_PATH = ./MLX42/build/libmlx42.a -ldl -lglfw -pthread -lm
+MLX_PATH = ./MLX42/build/libmlx42.a -g3 -ldl -lglfw -pthread -lm
 MLX_HEADER = ./MLX42/include
 
 #--------------------FILES--------------------#

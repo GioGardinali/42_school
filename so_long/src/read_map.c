@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/17 02:13:54 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 13:25:39 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 static void	check_file_map(int argc, t_data *game)
 {
 	int		fd;
+	int		i;
 	char	buffer[1];
 
-	if (argc < 2)
+	if (argc < 1)
 		handle_error(0, "You need to use: ./so_long <filename.ber>\n", game);
 	if (argc > 2)
 		handle_error(0, "You provided more arguments than necessary!\n", game);
-	if (ft_strnstr(game->map.file, ".ber", ft_strlen(game->map.file)) == NULL)
+	i = ft_strlen(game->map->file);
+	if (ft_strncmp(&game->map->file[i - 4], ".ber", 4) != 0)
 		handle_error(0, "Map not in .ber extension!\n", game);
-	fd = open(game->map.file, O_RDWR);
+	fd = open(game->map->file, O_RDONLY);
 	if (fd == -1)
 		handle_error(1, "Error!\n", game);
 	if (read(fd, buffer, 1) == 0)
@@ -37,29 +39,37 @@ static void	check_file_map(int argc, t_data *game)
 static void	size_map(t_data *game)
 {
 	int		fd;
-	int		map_outline;
 	char	*line;
 
-	game->map.columns = 0;
-	game->map.rows = 0;
-	map_outline = 0;
-	fd = open(game->map.file, O_RDWR);
+	game->map->columns = 0;
+	game->map->rows = 0;
+	fd = open(game->map->file, O_RDONLY);
 	line = ft_get_next_line(fd);
-	game->map.columns = ft_strlen(line) - 1;
+	if (line)
+		game->map->columns = ft_strlen(line) - 1; // game->map->grid_matrix = ft_calloc(1, sizeof(char *));
 	while (line)
 	{
+		game->map->rows++;
 		free(line);
-		game->map.rows++;
 		line = ft_get_next_line(fd);
-		if (line && ft_strlen(line) - 1 != (size_t)game->map.columns)
-			map_outline = 1;
+		if (map_outline_value(line, game) == 1)
+		{
+			close(fd);
+			handle_error(0, "Your Map must be rectangular!\n", game);
+		}
 	}
-	if (map_outline == 1)
-	{
-		close(fd);
-		handle_error(0, "Your Map must be rectangular!\n", game);
-	}
+	// free(line); //verificar se precisa dar free na variavel line por causa da gnl
 	close(fd);
+}
+
+int	map_outline_value(char *line, t_data *game)
+{
+	int	map_outline;
+
+	map_outline = 0;
+	if (line && ft_strlen(line) - 1 != (size_t)game->map->columns)
+			map_outline = 1;
+	return (map_outline);
 }
 
 static void	allocate_content_map(t_data *game)
@@ -68,13 +78,13 @@ static void	allocate_content_map(t_data *game)
 	int	y;
 
 	y = 0;
-	game->map.grid_matrix = malloc((game->map.rows) * sizeof(char *));
-	if (game->map.grid_matrix == NULL)
-		handle_error(1, "Error\n", game);
-	fd = open(game->map.file, O_RDWR);
-	while (y < game->map.rows)
+	game->map->grid_matrix = malloc((game->map->rows) * sizeof(char *));
+	if (game->map->grid_matrix == NULL)
+		handle_error(1, "Error! Matrix with problems\n", game);
+	fd = open(game->map->file, O_RDONLY);
+	while (y < game->map->rows)
 	{
-		game->map.grid_matrix[y] = ft_get_next_line(fd);
+		game->map->grid_matrix[y] = ft_get_next_line(fd);
 		y++;
 	}
 	close (fd);
