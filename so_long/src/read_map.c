@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 13:25:39 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:29:14 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	allocate_content_map(t_data *game)
 	int	y;
 
 	y = 0;
-	game->map->grid_matrix = malloc((game->map->rows) * sizeof(char *));
+	game->map->grid_matrix = ft_calloc((game->map->rows), sizeof(char *));
 	if (game->map->grid_matrix == NULL)
 		handle_error(1, "Error! Matrix with problems\n", game);
 	fd = open(game->map->file, O_RDONLY);

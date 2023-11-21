@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:17:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 14:54:29 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 21:34:44 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,24 @@ void	hook_move_player(mlx_key_data_t keydata, void *parameter)
 	t_data		*game;
 
 	game = (t_data *)parameter;
-	if (((keydata.key == MLX_KEY_W) ^ (keydata.key == MLX_KEY_UP))
+	game->human_init_x = game->content->human_1->instances->x/TILE_SIZE;
+	game->human_init_y = game->content->human_1->instances->y/TILE_SIZE;
+	if (((keydata.key == MLX_KEY_W) || (keydata.key == MLX_KEY_UP))
 		&& keydata.action == MLX_PRESS
 		&& game->map->grid_matrix[game->human_init_y - 1][game->human_init_x]
 		!= '1')
 		move_up(game, game->human_init_x, game->human_init_y);
-	if (((keydata.key == MLX_KEY_S) ^ (keydata.key == MLX_KEY_DOWN))
+	if (((keydata.key == MLX_KEY_S) || (keydata.key == MLX_KEY_DOWN))
 		&& keydata.action == MLX_PRESS
 		&& game->map->grid_matrix[game->human_init_y + 1][game->human_init_x]
 		!= '1')
 		move_down(game, game->human_init_x, game->human_init_y);
-	if (((keydata.key == MLX_KEY_A) ^ (keydata.key == MLX_KEY_LEFT))
+	if (((keydata.key == MLX_KEY_A) || (keydata.key == MLX_KEY_LEFT))
 		&& keydata.action == MLX_PRESS
 		&& game->map->grid_matrix[game->human_init_y][game->human_init_x - 1]
 		!= '1')
 		move_left(game, game->human_init_x, game->human_init_y);
-	if (((keydata.key == MLX_KEY_D) ^ (keydata.key == MLX_KEY_RIGHT))
+	if (((keydata.key == MLX_KEY_D) || (keydata.key == MLX_KEY_RIGHT))
 		&& keydata.action == MLX_PRESS
 		&& game->map->grid_matrix[game->human_init_y][game->human_init_x + 1]
 		!= '1')

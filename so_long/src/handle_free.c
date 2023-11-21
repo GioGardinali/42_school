@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:59:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 13:15:58 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:31:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ void	free_textures(t_data *game)
 	mlx_delete_texture(game->content->happiness);
 	mlx_delete_texture(game->content->portal);
 }
-

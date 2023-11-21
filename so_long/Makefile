@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 18:28:55 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/20 13:56:31 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/20 22:27:07 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@
 #GRATE = GAME_RATE=17
 ##LMLX = -lmlx -framework OpenGL -framework AppKit
 #LMLX = -framework Cocoa -framework OpenGL -framework IOKit
-#
 #valgrind --leak-check=full --show-leak-kinds=all --suppressions=./errors.txt -s -q ./so_long maps/map1.ber;
 #--------------------PATHS--------------------#
 
@@ -52,7 +51,7 @@ OBJS = $(addprefix $(OBJS_PATH)/, $(addsuffix .o, $(FILES)))
 #------------------VARIABLES-----------------#
 
 CFLAGS = -Wall -Wextra -Werror -I$(HEADER_PATH)
-LEAKS = valgrind --leak-check=full --show-leak-kinds=all -s -q
+LEAKS = valgrind --leak-check=full --show-leak-kinds=all --gen-suppressions=all --suppressions=./supp.txt
 RM = rm -f
 CC = gcc -g
 AR = ar -rcs
@@ -72,7 +71,7 @@ $(LIBFT):
 	$(MAKE)	-C $(LIBFT_PATH)
 
 play: all
-	./so_long "./maps/map.ber"
+	$(LEAKS) ./so_long "./maps/map1.ber"
 
 $(OBJS_PATH):
 	@mkdir -p $(OBJS_PATH)
