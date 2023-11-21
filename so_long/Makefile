@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 18:28:55 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/20 22:27:07 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/20 23:10:56 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,9 @@ FILES =\
 	check_valid_path \
 	handle_png_to_texture \
 	handle_texture_to_img \
-	display_count_on_screen_bonus \
 	handle_move_player \
 	handle_hook \
 	handle_render_game \
-	handle_render_game_bonus \
 	handle_free \
 	game_ending
 
@@ -62,7 +60,7 @@ OBJS_PATH = obj
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS) | $(BIN_DIR)
-	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_PATH) -lft $(MLX_PATH) -o $@
+	$(CC) $(CFLAGS) $(OBJS) -I./ -L$(LIBFT_PATH) -lft $(MLX_PATH) -o $@
 
 $(OBJS_PATH)/%.o:$(SRC_PATH)/%.c | $(OBJS_PATH)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -76,16 +74,13 @@ play: all
 $(OBJS_PATH):
 	@mkdir -p $(OBJS_PATH)
 
-$(BIN_DIR):
-	@mkdir -p $(BIN_DIR)
-
 clean:
-	$(MAKE) -C $(LIBFT_PATH) clean
-	$(RM) -r $(OBJS_DIR)
+	$(MAKE) -sC $(LIBFT_PATH) clean
+	$(RM) -r $(OBJS_PATH)
 
 fclean: clean
-	$(MAKE) -C $(LIBFT_PATH) fclean
-	$(RM) -r $(BIN_DIR)
+	$(MAKE) -sC $(LIBFT_PATH) fclean
+	$(RM) -r $(BIN);
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 22:58:44 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 22:29:14 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 23:01:06 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,20 @@ static void	size_map(t_data *game)
 	game->map->columns = 0;
 	game->map->rows = 0;
 	fd = open(game->map->file, O_RDONLY);
-	line = ft_get_next_line(fd);
+	line = get_next_line(fd);
 	if (line)
-		game->map->columns = ft_strlen(line) - 1; // game->map->grid_matrix = ft_calloc(1, sizeof(char *));
+		game->map->columns = ft_strlen(line) - 1;
 	while (line)
 	{
 		game->map->rows++;
 		free(line);
-		line = ft_get_next_line(fd);
+		line = get_next_line(fd);
 		if (map_outline_value(line, game) == 1)
 		{
 			close(fd);
 			handle_error(0, "Your Map must be rectangular!\n", game);
 		}
 	}
-	// free(line); //verificar se precisa dar free na variavel line por causa da gnl
 	close(fd);
 }
 
@@ -84,7 +83,7 @@ static void	allocate_content_map(t_data *game)
 	fd = open(game->map->file, O_RDONLY);
 	while (y < game->map->rows)
 	{
-		game->map->grid_matrix[y] = ft_get_next_line(fd);
+		game->map->grid_matrix[y] = get_next_line(fd);
 		y++;
 	}
 	close (fd);

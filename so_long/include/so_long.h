@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:46:16 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 22:16:21 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:56:54 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdlib.h> // malloc, free, size_t, NULL
 # include <fcntl.h> // open, close
 # include <unistd.h> //write, read
-#include <stdio.h>
 
 /*Macros*/
 # ifndef TILE_SIZE

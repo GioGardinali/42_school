@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:17:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 21:34:44 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 23:14:42 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	hook_move_player(mlx_key_data_t keydata, void *parameter)
 	t_data		*game;
 
 	game = (t_data *)parameter;
-	game->human_init_x = game->content->human_1->instances->x/TILE_SIZE;
-	game->human_init_y = game->content->human_1->instances->y/TILE_SIZE;
+	game->human_init_x = game->content->human_1->instances->x / TILE_SIZE;
+	game->human_init_y = game->content->human_1->instances->y / TILE_SIZE;
 	if (((keydata.key == MLX_KEY_W) || (keydata.key == MLX_KEY_UP))
 		&& keydata.action == MLX_PRESS
 		&& game->map->grid_matrix[game->human_init_y - 1][game->human_init_x]
@@ -62,8 +62,6 @@ void	render_map_game(t_data *game, int x, int y)
 		render_exit(game, x, y);
 	if (game->map->grid_matrix[y][x] == 'P')
 		render_human(game, x, y);
-	if (game->map->grid_matrix[y][x] == 'M')
-		render_money_enemy(game, x, y);
 }
 
 void	render_hook_map(t_data *game)

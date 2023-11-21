@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:21:29 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 21:43:48 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 23:11:43 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,14 @@ static void	handle_next_move(t_data *game, int x, int y)
 		game->content->happiness_1->instances[i].enabled = 0;
 		game->map->collect_count--;
 	}
-	printf("Coll: %d\n", game->map->collect_count);
 	if (game->map->collect_count == 0)
 	{
-		printf("X: %d\nY: %d\n", game->portal_init_x, game->portal_init_y);
 		game->map->grid_matrix[game->portal_init_y][game->portal_init_x] = 'E';
 		game->content->portal_1->enabled = true;
 		if (game->map->grid_matrix[y][x] == 'E')
 		{
-			ft_printf("%s\n", "WOW! You collected happiness along your journey!");
+			ft_printf("%s\n", "WOW! You collected happiness along"
+				"your journey!");
 			free_and_end_game(game);
 		}
 	}
@@ -73,12 +72,9 @@ void	move_left(t_data *game, int human_x, int human_y)
 	int	x;
 	int	y;
 
-	
 	x = human_x - 1;
 	y = human_y;
 	render_human_two(game, x, y);
-	printf("x: %d\nY: %d\n", x, y);
-	
 	if (game->map->grid_matrix[y][x] != '1')
 		handle_next_move(game, x, y);
 }
@@ -91,8 +87,6 @@ void	move_right(t_data *game, int human_x, int human_y)
 	x = human_x + 1;
 	y = human_y;
 	render_human_two(game, x, y);
-	printf("xR: %d\nY: %d\n", x, y);
-
 	if (game->map->grid_matrix[y][x] != '1')
 		handle_next_move(game, x, y);
 }

@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:03:27 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 22:16:08 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:57:52 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ static char	check_valid_tile(t_data *game, int x, int y, t_map *seen_flag)
 	seen_flag->grid_matrix[y][x] = 1;
 	return (check_valid);
 }
-// Essa parte é onde inpedimos o caractere '1' de ser válido no mapa,
-//assim o boneco não segue adiante, que vai ser na outra função.
 
 void	check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 {
@@ -103,13 +101,12 @@ void	check_sides(t_data *game, int refe_x, int refe_y, t_map *seen_flag)
 void	check_valid_path(t_data *game)
 {
 	t_map			seen_flag;
-	// t_direction		direction;
+
 	ft_memset(&seen_flag, 0, sizeof(t_map));
 	game->map_clone = &seen_flag;
 	game->map_clone->collect_count = 0;
 	allocate_flag_grid(game, game->map_clone);
 	start_position_player(game, game->map_clone);
-	// direction = (t_direction){.x = {0, 1, 0, -1}, .y = {-1, 0, 1, 0}};
 	check_sides(game, game->human_init_x, game->human_init_y, game->map_clone);
 	if (seen_flag.valid_path == 0)
 	{
@@ -123,9 +120,3 @@ void	check_valid_path(t_data *game)
 	}
 	free_map(game->map_clone);
 }
-
-// decompor a função abaixo para destrichar e escrever ela
-//ela é uma função que vai checar os vizinhos, ou seja, o que tá em volta
-//do boneco, dessa forma, eu conto o número de coletáveis pegos se eu estiver
-//em um coletável até está tudo coletado
-//entender como coordenadas funciona

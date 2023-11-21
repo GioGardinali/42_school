@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/16 23:51:34 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/20 22:39:52 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,8 @@ SRC		:= ft_atoi.c \
 		ft_puthex_fd.c \
 		ft_putlowhex.c \
 		ft_putuphex.c \
-		ft_get_next_line.c \
+		get_next_line.c \
+		get_next_line_utils.c \
 		ft_printf.c \
 		ft_lstnew.c \
 		ft_lstadd_front.c \
