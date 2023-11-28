@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:34:51 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/16 20:35:54 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:00:53 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 int	main(int argc, char **argv)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	if (argc == 2)
 	{
-		while (argv[1][i] == 32 || argv[1][i] == 9)
+		while (argv[1][i] == ' ' || argv[1][i] == '\t')
 			i++;
-		while ((argv[1][i] != 32 && argv[1][i] != 9) &&
+		while ((argv[1][i] != ' ' && argv[1][i] != '\t') &&
 			argv[1][i])
 		{
 			write(1, &argv[1][i], 1);
 			i++;
 		}
 	}
-	write(1, "\n", 1);
+	write(1, "\n", 2);
 }
 
 /* eu peço para checar se é o segundo argumento da matriz
