@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 20:40:05 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/28 20:48:41 by gigardin         ###   ########.fr        #
+#    Updated: 2023/11/28 20:54:20 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,23 +47,30 @@ OBJS_PATH = obj
 
 #--------------------RULES------------------#
 
-
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS) $@
-#	ar rcs $(NAME) $?
-#	echo $?
+$(NAME): $(LIBFT) $(OBJS) | $(BIN_DIR)
+	$(CC) $(CFLAGS) $(OBJS) -I./ -L$(LIBFT_PATH) -lft $(MLX_PATH) -o $@
 
-%.o: %.c
-	$(CC) -c $< -o $@
-	
+$(OBJS_PATH)/%.o:$(SRC_PATH)/%.c | $(OBJS_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIBFT):
+	$(MAKE)	-C $(LIBFT_PATH)
+
+play: all
+	$(LEAKS) ./so_long "./maps/map1.ber"
+
+$(OBJS_PATH):
+	@mkdir -p $(OBJS_PATH)
 
 clean:
-	$(RM) $(OBJS)
+	$(MAKE) -sC $(LIBFT_PATH) clean
+	$(RM) -r $(OBJS_PATH)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(MAKE) -sC $(LIBFT_PATH) fclean
+	$(RM) -r $(BIN);
 
 re: fclean all
 
