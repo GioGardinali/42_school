@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/11/20 22:38:10 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:33:06 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,8 @@ int		ft_nbrlen(unsigned long int n);
 int		ft_puthex_fd(unsigned long int adress);
 int		ft_putlowhex(unsigned long int adress);
 int		ft_putuphex(unsigned long int adress);
+
+//new functions
+int		ft_isstringdigit(char *string);
 
 #endif

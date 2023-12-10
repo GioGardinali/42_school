@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/11/20 22:39:52 by gigardin         ###   ########.fr        #
+#    Updated: 2023/12/10 19:33:27 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,8 @@ SRC		:= ft_atoi.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c \
+		ft_isstringdigit.c
 
 OBJS	:= $(SRC:%.c=%.o)
 
