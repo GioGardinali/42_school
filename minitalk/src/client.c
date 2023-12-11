@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 17:01:07 by gigardin          #+#    #+#             */
-/*   Updated: 2023/12/10 19:20:03 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/12/10 23:16:27 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	send_message(int server_pid, char c_msg)
 {
 	int	bit;
 
-	bit = 8;
-	while (bit > 0)
+	bit = 7;
+	while (bit >= 0)
 	{
 		if (c_msg >> bit & 1)
 			kill(server_pid, SIGUSR1);
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	if (check_input(argc, argv) == 1)
 	{
 		server_pid = ft_atoi(argv[1]);
-		message = ft_strduo(argv[2]);
+		message = ft_strdup(argv[2]);
 		while (message[i] != '\0')
 		{
 			send_message(server_pid, message[i]);

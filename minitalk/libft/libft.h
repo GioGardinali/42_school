@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2023/12/10 19:33:06 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/12/10 23:23:25 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 //mandatory part 2
-int		ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
+int		ft_putchar_int_fd(char c, int fd);
 char	*ft_itoa(int n);
 void	ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);

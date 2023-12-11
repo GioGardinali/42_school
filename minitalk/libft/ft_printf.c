@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:14:52 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 16:15:37 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/12/10 23:27:51 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	check_flag(const char *str_char, va_list args)
 {
 	if (*str_char == 'c')
-		return (ft_putchar_fd(va_arg(args, int), 1));
+		return (ft_putchar_int_fd(va_arg(args, int), 1));
 	else if (*str_char == 's')
 		return (ft_putstr_fd(va_arg(args, char *), 1));
 	else if (*str_char == 'p')
@@ -29,9 +29,9 @@ static int	check_flag(const char *str_char, va_list args)
 	else if (*str_char == 'X')
 		return (ft_putuphex((va_arg(args, unsigned int))));
 	else if (*str_char == '%')
-		return (ft_putchar_fd('%', 1));
+		return (ft_putchar_int_fd('%', 1));
 	else
-		return (ft_putchar_fd(*str_char, 1));
+		return (ft_putchar_int_fd(*str_char, 1));
 }
 
 int	ft_printf(const char *str, ...)
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar_fd(*str, 1);
+			ft_putchar_int_fd(*str, 1);
 			str++;
 			count += 1;
 		}

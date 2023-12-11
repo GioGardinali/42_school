@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 19:24:48 by gigardin          #+#    #+#             */
-/*   Updated: 2023/10/28 16:05:58 by gigardin         ###   ########.fr       */
+/*   Updated: 2023/12/10 23:24:55 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_putlowhex(unsigned long int adress)
 	temp = 0;
 	index = 0;
 	if (adress == 0)
-		return (ft_putchar_fd('0', 1));
+		return (ft_putchar_int_fd('0', 1));
 	while (adress >= 1)
 	{
 		temp = adress % 16;

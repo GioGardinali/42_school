@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2023/12/10 19:33:27 by gigardin         ###   ########.fr        #
+#    Updated: 2023/12/10 23:28:50 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC		:= ft_atoi.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_putchar_fd.c \
+		ft_putchar_int_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
