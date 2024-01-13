@@ -6,11 +6,21 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 17:01:07 by gigardin          #+#    #+#             */
-/*   Updated: 2023/12/10 23:16:27 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/01/13 15:33:30 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
+
+int	g_delivered = 0;
+
+void	signal_delivery(int signal)
+{
+	if (signal == SIGUSR1)
+	{
+		g_delivered = 1;
+	}
+}
 
 int	check_input(int argc, char **argv)
 {
@@ -32,39 +42,44 @@ int	check_input(int argc, char **argv)
 	return (input_correct);
 }
 
-void	send_message(int server_pid, char c_msg)
+void	send_message(int server_pid, unsigned char c_msg)
 {
-	int	bit;
+	int				i;
+	unsigned char	bit;
 
-	bit = 7;
-	while (bit >= 0)
+	i = 0;
+	while (i < 8)
 	{
-		if (c_msg >> bit & 1)
+		g_delivered = 0;
+		bit = (c_msg >> i & 1);
+		if (bit == 0)
 			kill(server_pid, SIGUSR1);
-		else
+		else if (bit == 1)
 			kill(server_pid, SIGUSR2);
-		usleep(400);
-		bit--;
+		i++;
+		while (!g_delivered)
+			;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	int		server_pid;
-	char	*message;
+	struct sigaction	sa;
+	int					i;
+	int					server_pid;
 
 	i = 0;
 	if (check_input(argc, argv) == 1)
 	{
 		server_pid = ft_atoi(argv[1]);
-		message = ft_strdup(argv[2]);
-		while (message[i] != '\0')
+		sa.sa_handler = signal_delivery;
+		sa.sa_flags = 0;
+		sigaction(SIGUSR1, &sa, NULL);
+		while (argv[2][i] != '\0')
 		{
-			send_message(server_pid, message[i]);
+			send_message(server_pid, argv[2][i]);
 			i++;
 		}
-		free(message);
 		send_message(server_pid, '\n');
 	}
 	return (0);

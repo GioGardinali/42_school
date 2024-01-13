@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:14:41 by gigardin          #+#    #+#             */
-/*   Updated: 2023/08/13 16:04:02 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:49:10 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_strdup(const char *s)
 	if (!copy)
 		return (NULL);
 	index = 0;
+	ft_bzero(copy, (sizeof (char) * len + 1));
 	while (s[index])
 	{
 		copy[index] = s[index];

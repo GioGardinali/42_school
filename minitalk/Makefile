@@ -6,11 +6,11 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/09 20:31:45 by gigardin          #+#    #+#              #
-#    Updated: 2023/12/10 16:53:08 by gigardin         ###   ########.fr        #
+#    Updated: 2024/01/13 15:41:17 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#--------------------RULES------------------#
+#--------------------VARIABLES------------------#
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -47,5 +47,9 @@ clean:
 fclean: clean
 	@$(MAKE) fclean -C ./libft
 	@$(RM) $(SERVER) $(CLIENT)
+
+svr: $(SERVER)
+
+clnt: $(CLIENT)
 
 re: fclean all
