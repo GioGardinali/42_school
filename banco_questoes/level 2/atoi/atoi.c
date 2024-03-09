@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	return (result * signal);
 }
 
-int main(void)
-{
-	printf("%d",ft_atoi("     456"));
-}
+// int main(void)
+// {
+// 	printf("%d",ft_atoi("     456"));
+// }

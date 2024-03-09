@@ -1,0 +1,30 @@
+Assignment name  : union
+Expected files   : union.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+
+Escreva um programa que recebe duas strings e exibe, 
+sem duplicatas, os caracteres que aparecem em pelo 
+menos uma das strings.
+
+A exibição seguirá a ordem em que os caracteres 
+aparecem na linha de comando e será seguida por 
+uma quebra de linha (\n).
+
+Se o número de argumentos não for 2, o programa 
+exibirá uma quebra de linha (\n).
+Example:
+
+$>./union zpadinton "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+zpadintoqefwjy$
+$>./union ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6vewg4thras$
+$>./union "rien" "cette phrase ne cache rien" | cat -e
+rienct phas$
+$>./union | cat -e
+$
+$>
+$>./union "rien" | cat -e
+$
+$>

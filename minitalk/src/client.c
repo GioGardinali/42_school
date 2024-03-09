@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 17:01:07 by gigardin          #+#    #+#             */
-/*   Updated: 2024/01/13 15:33:30 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/01/13 18:32:26 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_input(int argc, char **argv)
 	return (input_correct);
 }
 
-void	send_message(int server_pid, unsigned char c_msg)
+void	send_bit(int server_pid, unsigned char c_msg)
 {
 	int				i;
 	unsigned char	bit;
@@ -77,10 +77,10 @@ int	main(int argc, char **argv)
 		sigaction(SIGUSR1, &sa, NULL);
 		while (argv[2][i] != '\0')
 		{
-			send_message(server_pid, argv[2][i]);
+			send_bit(server_pid, argv[2][i]);
 			i++;
 		}
-		send_message(server_pid, '\n');
+		send_bit(server_pid, '\n');
 	}
 	return (0);
 }

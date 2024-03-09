@@ -15,25 +15,26 @@ int	check(char *str, char c, int index)
 
 int	main(int argc, char **argv)
 {
-	int i = 0;
-	int j = 0;
+	int i_one = 0;
+	int i_two = 0;
+	int i_three = 0;
 
 	if (argc == 3)
 	{
-		while (argv[1][i])
-			i++;
-		while (argv[2][j])
+		while (argv[1][i_one])
+			i_one++;
+		while (argv[2][i_two])
 		{
-			argv[1][i] = argv[2][j];
-			i++;
-			j++;
+			argv[1][i_one] = argv[2][i_two];
+			i_one++;
+			i_two++;
 		}
-		j = 0;
-		while (j < i)
+		i_one--;
+		while (i_three <= i_one)
 		{
-			if(check (argv[1], argv[1][j], j) == 1)
-				write(1, &argv[1][j], 1);
-			j++;
+			if(check (argv[1], argv[1][i_three], i_three) == 1)
+				write(1, &argv[1][i_three], 1);
+			i_three++;
 		}
 	}
 	write(1, "\n", 1);
