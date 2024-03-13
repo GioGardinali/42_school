@@ -6,11 +6,38 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:19:28 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/13 03:15:28 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/13 04:27:38 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static unsigned int	rb_moves(t_stacks *stacks, int nbr_to_push)
+{
+	t_element		*element;
+	t_element		*element_prev;
+	unsigned int	position;
+
+	if (nbr_to_push > element_int(stacks->b_max)
+		|| nbr_to_push < element_int(stacks->b_min))
+		return (rb_edge_moves(stacks, nbr_to_push));
+	element = stacks->b->first;
+	position = 0;
+	while (element)
+	{
+		element_prev = element->prev;
+		if (!element_prev)
+			element_prev = stacks->b->last;
+		if (element == stacks->b_max)
+			;
+		else if (element_int(element_prev) > nbr_to_push && \
+			element_int(element) < nbr_to_push)
+			break ;
+		position++;
+		element = element->next;
+	}
+	return (position);
+}
 
 static void	min_moves(t_element_data *data)
 {
@@ -26,7 +53,18 @@ static void	min_moves(t_element_data *data)
 		data->move_scheme = rrr_rra_rrb;
 	}
 	moves_min = ft_value_min(moves, data->ra + data->rrb);
-	
+	if (moves_min < moves)
+	{
+		moves = moves_min;
+		data->move_scheme = ra_rrb;
+	}
+	moves_min = ft_value_min(moves, data->rra + data->rb);
+	if (moves_min < moves)
+	{
+		moves = moves_min;
+		data->move_scheme = rra_rb;
+	}
+	data->moves = moves;
 }
 
 t_element_data	*nbr_moves(t_stacks *stacks, t_element *element_a,
