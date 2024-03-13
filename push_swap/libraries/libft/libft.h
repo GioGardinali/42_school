@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/09 03:30:49 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/12 22:20:52 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int			ft_isprint(int c);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 int			ft_atoi(const char *nptr);
+long long	ft_atoll(const char *nptr);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
@@ -101,5 +102,6 @@ int			ft_putuphex(unsigned long int adress);
 
 //new functions
 int			ft_isstringdigit(char *string);
+int			ft_isstringint_atoi(const char *str);
 
 #endif

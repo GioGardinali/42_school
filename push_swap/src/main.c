@@ -6,11 +6,11 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:19:28 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/09 04:50:19 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/13 02:12:18 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
 void	clear_lists(t_stacks *stacks, int error)
 {
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		clear_lists(&stacks, malloc_error);
 	stack_a_fill(table, &stacks);
 	search_duplicates(&stacks);
-	algorith(&stacks);
+	algorithm(&stacks);
 	clear_lists(&stacks, not_error);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/06 15:35:07 by gigardin          #+#    #+#              #
-#    Updated: 2024/03/09 03:24:36 by gigardin         ###   ########.fr        #
+#    Updated: 2024/03/12 22:21:12 by gigardin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS	:= -Wall -Wextra -Werror
 NAME	:= libft.a
 
 SRC		:= ft_atoi.c \
+		ft_atoll.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -69,7 +70,8 @@ SRC		:= ft_atoi.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-		ft_isstringdigit.c
+		ft_isstringdigit.c \
+		ft_isstringint_atoi
 
 OBJS	:= $(SRC:%.c=%.o)
 

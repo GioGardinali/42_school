@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isstringint_atoi.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 20:15:50 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/06 16:46:20 by gigardin         ###   ########.fr       */
+/*   Created: 2024/03/12 22:19:52 by gigardin          #+#    #+#             */
+/*   Updated: 2024/03/12 22:20:31 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <limits.h>
-# include <../libft/libft.h>
-
-typedef struct s_stacks
+int	ft_isstringint_atoi(const char *str)
 {
-	t_list		*a;
-	t_list		*b;
-	t_element	*a_max;
-	t_element	*a_min;
-	t_element	*b_max;
-	t_element	*b_min;
-	int			b_sorted;
-}	t_stacks;
-
-#endif
+	if (!str || !*str)
+		return (0);
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str)
+	{
+		if (!('0' <= *str && *str <= '9'))
+			return (0);
+		str++;
+	}
+	return (1);
+}
