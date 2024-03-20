@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:19:28 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/13 02:44:41 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/15 02:40:42 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	algorithm(t_stacks *stacks)
 {
 	if (check_if_right(stacks))
 		return ;
-	stack_rule_by_size(stacks);
+	stack_by_size(stacks);
 	if (check_if_right(stacks))
 		return ;
 	if (!stacks->b_sorted)

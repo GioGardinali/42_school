@@ -6,11 +6,35 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:19:28 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/13 04:27:38 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/19 22:15:50 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static unsigned int rb_edge_moves(t_stacks *stacks, int nbr_to_push)
+{
+	t_element		*element;
+	unsigned int	position;
+	
+	element = stacks->b->first;
+	position = 0;
+	while (element)
+	{
+		if (nbr_to_push > element_int(stacks->b_max)
+			&& (element == stacks->b_max))
+			break ;
+		if (nbr_to_push < element_int(stacks->b_min)
+			&& (element == stacks->b_min))
+		{
+			position++;
+			break ;
+		}
+		position++;
+		element = element->next;
+	}
+	return (position);
+}
 
 static unsigned int	rb_moves(t_stacks *stacks, int nbr_to_push)
 {

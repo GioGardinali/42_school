@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 20:30:42 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/12 22:20:52 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/15 05:26:52 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void		ft_lstdelone(t_list *lst, t_element *element, void (*del)(void*));
 void		ft_lstclear(t_list *lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_element	*ft_lstnew_element(void *content);
+t_element	*ft_lstpop(t_list *lst, int index);
 void		ft_lstadd_before(t_list *lst, t_element *ref, t_element *element);
 void		ft_lstadd_after(t_list *lst, t_element *ref, t_element *element);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
@@ -103,5 +104,6 @@ int			ft_putuphex(unsigned long int adress);
 //new functions
 int			ft_isstringdigit(char *string);
 int			ft_isstringint_atoi(const char *str);
+t_element	*ft_lstpickel(t_list *lst, int index);
 
 #endif

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min.c                                    :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 15:19:30 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/19 21:11:45 by gigardin         ###   ########.fr       */
+/*   Created: 2024/03/10 10:23:43 by gigardin          #+#    #+#             */
+/*   Updated: 2024/03/15 05:35:16 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	element_int(t_element *element)
+static void	push(t_list *from, t_list *to)
 {
-	return (*(int *) element->content);
+	t_element	*element_from;
+
+	if (from->size >= 1)
+	{
+		element_from = ft_lstpop(from, 0);
+		ft_lstadd_front(to, element_from);
+	}
 }
 
-unsigned int	ft_value_min(unsigned int a, unsigned int b)
+void	pa(t_stacks *stacks)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	push(stacks->b, stacks->a);
+	ft_putstr_fd("pa\n", 1);
 }
 
-unsigned int	ft_value_max(unsigned int a, unsigned int b)
+void	pb(t_stacks *stacks)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	push(stacks->a, stacks->b);
+	ft_putstr_fd("pb\n", 1);
 }

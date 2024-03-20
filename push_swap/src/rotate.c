@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min.c                                    :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 15:19:30 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/19 21:11:45 by gigardin         ###   ########.fr       */
+/*   Created: 2024/03/10 10:23:43 by gigardin          #+#    #+#             */
+/*   Updated: 2024/03/15 05:45:10 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	element_int(t_element *element)
+static void	rotate(t_list *stack)
 {
-	return (*(int *) element->content);
+	t_element	*element;
+
+	if (stack->size > 1)
+	{
+		element = ft_lstpop(stack, 0);
+		ft_lstadd_back(stack, element);
+	}
 }
 
-unsigned int	ft_value_min(unsigned int a, unsigned int b)
+void	ra(t_stacks *stacks)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	rotate(stacks->a);
+	ft_putstr_fd("ra\n", 1);
 }
 
-unsigned int	ft_value_max(unsigned int a, unsigned int b)
+void	rb(t_stacks *stacks)
 {
-	if (a > b)
-		return (a);
-	return (b);
+	rotate(stacks->b);
+	ft_putstr_fd("rb\n", 1);
+}
+
+void	rr(t_stacks *stacks)
+{
+	rotate(stacks->a);
+	rotate(stacks->b);
+	ft_putstr_fd("rr\n", 1);
 }

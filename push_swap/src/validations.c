@@ -6,7 +6,7 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 04:52:38 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/13 01:45:04 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/19 22:17:32 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	search_duplicates(t_stacks *stacks)
 		while (element_two)
 		{
 			if (*(int *)element_one->content == *(int *)element_two->content)
-				clear_stacks(stacks, value_duplicated);
+				clear_lists(stacks, duplicated_value);
 			element_two = element_two->next;
 		}
 		element_one = element_one->next;

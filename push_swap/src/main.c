@@ -6,19 +6,12 @@
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 20:19:28 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/13 02:12:18 by gigardin         ###   ########.fr       */
+/*   Updated: 2024/03/19 21:52:24 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	clear_lists(t_stacks *stacks, int error)
-{
-	ft_lstclear(stacks->a, free);
-	ft_lstclear(stacks->b, free);
-	if (error)
-		errors(error);
-}
 static void	stack_a_fill(char **table, t_stacks *stacks)
 {
 	t_element	*element;
@@ -34,7 +27,7 @@ static void	stack_a_fill(char **table, t_stacks *stacks)
 		*number = ft_atoi(table[i++]);
 		element = ft_lstnew_element((void *)number);
 		if (!element)
-			clear_stacks(stacks, malloc_error);
+			clear_lists(stacks, malloc_error);
 		ft_lstadd_back(stacks->a, element);
 	}
 	clear_table(table);
@@ -45,7 +38,7 @@ int	main(int argc, char **argv)
 	char		**table;
 	t_stacks	stacks;
 
-	table = args_valid(argc, argv);
+	table = validation_args(argc, argv);
 	ft_bzero(&stacks, sizeof(t_stacks));
 	stacks.a = ft_calloc(1, sizeof(t_list));
 	stacks.b = ft_calloc(1, sizeof(t_list));

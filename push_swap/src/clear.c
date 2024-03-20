@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_max_min.c                                    :+:      :+:    :+:   */
+/*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gigardin <gigardin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 15:19:30 by gigardin          #+#    #+#             */
-/*   Updated: 2024/03/19 21:11:45 by gigardin         ###   ########.fr       */
+/*   Created: 2024/03/06 16:19:30 by gigardin          #+#    #+#             */
+/*   Updated: 2024/03/19 21:12:22 by gigardin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	element_int(t_element *element)
+void	clear_lists(t_stacks *stacks, int error)
 {
-	return (*(int *) element->content);
+	ft_lstclear(stacks->a, free);
+	ft_lstclear(stacks->b, free);
+	if (error)
+		errors(error);
 }
 
-unsigned int	ft_value_min(unsigned int a, unsigned int b)
+char	**clear_table(char **table)
 {
-	if (a < b)
-		return (a);
-	return (b);
-}
+	unsigned int	i;
 
-unsigned int	ft_value_max(unsigned int a, unsigned int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
+	i = 0;
+	while (table[i])
+		free (table[i++]);
+	free (table);
+	return (NULL);
 }
