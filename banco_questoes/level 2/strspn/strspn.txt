@@ -1,0 +1,17 @@
+Assignment name	: ft_strspn
+Expected files	: ft_strspn.c
+Allowed functions: None
+---------------------------------------------------------------
+
+Reproduza exatamente o comportamento da função strspn 
+(consulte man strspn).
+A função strspn é usada para calcular o comprimento da 
+parte inicial de uma string que consiste inteiramente 
+de caracteres que não estão em outra string fornecida. 
+A função ft_strspn recebe duas strings como parâmetros 
+e retorna o número de caracteres na primeira string 
+(s) que são todos encontrados na segunda string (accept).
+
+A função deve ser prototipada da seguinte forma:
+
+size_t	ft_strspn(const char *s, const char *accept);

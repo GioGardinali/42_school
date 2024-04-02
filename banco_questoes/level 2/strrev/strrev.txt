@@ -1,0 +1,19 @@
+Assignment name  : ft_strrev
+Expected files   : ft_strrev.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Função strrev da biblioteca padrão C, 
+que inverte uma string in-place, ou seja, 
+modifica a string original para que ela seja a sua 
+versão invertida. A função recebe um ponteiro para 
+uma string (char *str) e retorna o mesmo ponteiro 
+após a inversão.
+
+Escreva uma função que inverta (in-place) uma string.
+
+Ela deve retornar seu parâmetro.
+
+Sua função deve ser declarada da seguinte forma:
+
+char    *ft_strrev(char *str);

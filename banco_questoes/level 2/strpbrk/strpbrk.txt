@@ -1,0 +1,17 @@
+Assignment name	: ft_strpbrk
+Expected files	: ft_strpbrk.c
+Allowed functions: None
+---------------------------------------------------------------
+
+Reproduza exatamente o comportamento da função strpbrk
+ (consulte man strpbrk).
+A função strpbrk é usada para encontrar o primeiro caractere 
+na primeira string (s1) que corresponde a qualquer 
+caractere na segunda string (s2). Ela retorna um 
+ponteiro para o caractere na primeira string que 
+corresponde a um caractere na segunda string, ou NULL 
+se nenhum caractere correspondente for encontrado.
+
+A função deve ser prototipada da seguinte forma:
+
+char	*ft_strpbrk(const char *s1, const char *s2);
