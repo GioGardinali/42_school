@@ -6,6 +6,12 @@ Allowed functions: None
 Reproduza exatamente o comportamento da função strcspn 
 (consulte man strcspn).
 
+A função strcspn calcula o comprimento do segmento inicial 
+de uma string (str1), que consiste inteiramente de caracteres 
+que não estão presentes em outra string (str2). Em outras palavras,
+strcspn retorna o número de caracteres iniciais em str1 
+que não correspondem a nenhum caractere em str2.
+
 A função deve ser prototipada da seguinte forma:
 
 size_t	ft_strcspn(const char *s, const char *reject);
