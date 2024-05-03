@@ -16,5 +16,5 @@ int	main(int argc, char **argv)
 		if (argv[2][0] == '%')
 			printf("%d", (atoi(argv[1])) % atoi(argv[3]));
 	}
-	write(1, "\n", 1);
+	printf("\n");
 }

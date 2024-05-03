@@ -1,0 +1,26 @@
+Assignment name  : lcm
+Expected files   : lcm.c
+Allowed functions:
+--------------------------------------------------------------------------------
+
+Escreva uma função que recebe dois inteiros não assinados 
+como parâmetros e retorna o MCM (Maior Comum Divisor) desses 
+parâmetros.
+
+O MCM de dois inteiros não nulos é o menor inteiro positivo 
+divisível por ambos os inteiros.
+
+O MCM pode ser calculado de duas maneiras:
+
+Você pode calcular todos os múltiplos de cada inteiro até 
+encontrar um múltiplo comum diferente de 0.
+Você pode usar o MDC (Maior Divisor Comum) desses dois 
+inteiros e calcular da seguinte forma:
+MCM(x, y) = | x * y | / MDC(x, y)
+| x * y | significa "Valor absoluto do produto de x por y"
+
+Se pelo menos um inteiro for nulo, o MCM é igual a 0.
+
+Sua função deve ser prototipada da seguinte forma:
+
+  unsigned int    lcm(unsigned int a, unsigned int b);

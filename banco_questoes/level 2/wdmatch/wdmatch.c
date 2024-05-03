@@ -18,7 +18,7 @@ int	main(int argc, char const **argv)
 		while (argv[2][j])
 			if (argv[2][j++] == argv[1][i])
 				i += 1;
-		if (!argv[1][i])
+		if (argv[1][i] == '\0')
 			ft_putstr(argv[1]);
 	}
 	write(1, "\n", 1);
