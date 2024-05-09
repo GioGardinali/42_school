@@ -22,3 +22,13 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	}
 	return (0);
 }
+
+int main() {
+
+    const char *s1 = "Hello, World!";
+    const char *s2 = "Helo";
+
+    char *result = ft_strpbrk(s1, s2);
+        printf("Caractere correspondente encontrado: %s\n", result);
+    return 0;
+}

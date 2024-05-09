@@ -1,28 +1,47 @@
 #include <unistd.h>
 
-int	interce(char *str, char c, int len)
+int	check(char *str, char c, int index)
 {
-	int	i;
+	int i = 0;
 
-	i = 0;
-	while (str[i] && (i < len || len -1))
-		if (str[i++] == c)
-			return (1);
+	while (i < index)
+	{
+		if (str[i] == c)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-int	main(int argc, char **argv)
+void	ft_inter(char *s1, char *s2)
 {
-	int	i;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (argc == 3)
+	while (s1[i])
 	{
-		while (argv[1][i])
+		if (check(s1, s1[i], i) == 1)
 		{
-			if (!interce(argv[1], argv[1][i], i) && interce(argv[2], argv[1][i], -1))
-				write(1, &argv[1][i], 1);
-			i++;
+			j = 0;
+			while (s2[j])
+			{
+				if (s2[j] == s1[i])
+				{
+					write(1, &s1[i], 1);
+					break ;
+				}
+				j++;
+			}
 		}
+		i++;
 	}
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 3)
+		ft_inter(argv[1], argv[2]);
 	write(1, "\n", 1);
+	return (0);
 }

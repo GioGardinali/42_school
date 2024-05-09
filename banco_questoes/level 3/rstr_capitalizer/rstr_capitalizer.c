@@ -7,7 +7,7 @@ void    rstr_capitalizer(char *str)
     while (str[i])
     {
         if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] = str[i] - 32;
+            str[i] = str[i] + 32;
         if ((str[i] >= 'a' && str[i] <= 'z') && \
 			(str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\0'))
             str[i] = str[i] - 32;

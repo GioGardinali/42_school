@@ -3,26 +3,28 @@
 
 void	fprime(unsigned int nb)
 {
-	unsigned	i;
+	unsigned int	prime;
 
 	if (nb == 1)
 		printf("1");
 	else
 	{
-		i = 1;
+		prime = 2;
 		while (nb > 1)
 		{
-			if (nb % ++i == 0)
+			if (nb % prime == 0)
 			{
-				printf("%d", i);
-				nb = nb / i;
+				printf("%d", prime);
+				nb /= prime;
 				if (nb > 1)
 					printf("*");
-				--i;
+				prime--;
 			}
+			prime++;
 		}
 	}
 }
+
 
 int	main(int argc, char **argv)
 {

@@ -9,11 +9,13 @@ int	ft_atoi(const char *str)
 	signal = 1;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
-	if (*str == '-')
-		signal *= -1;
 	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			signal *= -1;
 		str++;
-	while (*str >= 0 && *str <= 9)
+	}
+	while (*str >= '0' && *str <= '9')
 	{
 		result = (result * 10) + (*str - '0');
 		str++;
