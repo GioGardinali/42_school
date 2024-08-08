@@ -2,6 +2,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+//teste do dia 08/08 40 min (consulta 3 vezes)
+//comecei pelas funções auxiliares e depois fui para a principal
+//tentar na próxima fazer o escopo da principal e focar nas 
+//auxiliares
+
 void put_string(char *str, int *len)
 {
 	if (!str)
